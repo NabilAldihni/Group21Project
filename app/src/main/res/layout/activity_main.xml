@@ -13,4 +13,12 @@
         android:text="Wassup"
         tools:layout_editor_absoluteX="162dp"
         tools:layout_editor_absoluteY="246dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Complaints"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="293dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

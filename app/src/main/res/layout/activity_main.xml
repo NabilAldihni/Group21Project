@@ -8,9 +8,10 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wassup"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="246dp" />
+        android:layout_width="214dp"
+        android:layout_height="26dp"
+        android:text="What Program are You Pursuing?"
+
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="67dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

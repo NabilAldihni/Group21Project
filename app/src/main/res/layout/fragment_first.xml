@@ -4,81 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".SecondFragment"
-
-    >
-
-
+    android:background="@color/black"
+    tools:context=".SecondFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="0dp"
-        android:paddingLeft="0dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="0dp"
-        android:paddingRight="0dp">
-
-
-        <include
-            android:id="@+id/my_toolbar"
-            style="@style/ToolbarStyle"
-            layout="@layout/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:padding="0dp"
-            android:paddingStart="0dp"
-            android:paddingLeft="0dp"
-            android:paddingTop="0dp"
-            android:paddingEnd="0dp"
-            android:paddingRight="0dp"
-            android:paddingBottom="0dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/textview_first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginBottom="3108dp"
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="What Program are you Pursuing?"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="50sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.968"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textview_second"
-            android:layout_width="386dp"
-            android:layout_height="169dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2936dp"
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="Choose one of the options below to learn more about Computer Science (CS) programs at UTSC."
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="35sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.48"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview_first" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/buttonFirst"
             android:layout_width="235dp"
             android:layout_height="95dp"
-            android:layout_marginTop="44dp"
-            android:backgroundTint="#013A6F"
+            android:layout_marginTop="48dp"
+            android:backgroundTint="#3F51B5"
             android:text="CS Specialist"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,8 +59,8 @@
             android:id="@+id/button2"
             android:layout_width="235dp"
             android:layout_height="95dp"
-            android:layout_marginTop="176dp"
-            android:backgroundTint="#013A6F"
+            android:layout_marginTop="184dp"
+            android:backgroundTint="#3F51B5"
             android:text="CS Major"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,8 +71,8 @@
             android:id="@+id/button3"
             android:layout_width="235dp"
             android:layout_height="95dp"
-            android:layout_marginTop="308dp"
-            android:backgroundTint="#013A6F"
+            android:layout_marginTop="320dp"
+            android:backgroundTint="#3F51B5"
             android:text="CS Minor"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"

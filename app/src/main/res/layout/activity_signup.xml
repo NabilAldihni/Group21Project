@@ -3,37 +3,56 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"/>
+    <!-- Optionally add a UofT logo here -->
 
-    <EditText
-        android:id="@+id/editTextUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Username"/>
+<EditText
+    android:id="@+id/editTextEmail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Email"
+    android:padding="12dp"
+    android:background="#E3E3E3"
+    android:layout_marginBottom="8dp"/>
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"/>
+<EditText
+    android:id="@+id/editTextUsername"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Username"
+    android:padding="12dp"
+    android:background="#E3E3E3"
+    android:layout_marginBottom="8dp"/>
 
-    <EditText
-        android:id="@+id/editTextId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="ID"/>
+<EditText
+    android:id="@+id/editTextPassword"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Password"
+    android:inputType="textPassword"
+    android:padding="12dp"
+    android:background="#E3E3E3"
+    android:layout_marginBottom="8dp"/>
 
-    <Button
-        android:id="@+id/buttonSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Up"/>
-</LinearLayout>
+<EditText
+    android:id="@+id/editTextId"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="ID"
+    android:padding="12dp"
+    android:background="#E3E3E3"
+    android:layout_marginBottom="16dp"/>
+
+<Button
+    android:id="@+id/buttonSignUp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Sign Up"
+    android:background="#002A5C"
+    android:textColor="#FFFFFF"
+    android:padding="10dp"/>
+    </LinearLayout>

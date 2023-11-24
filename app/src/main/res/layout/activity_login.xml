@@ -3,13 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:padding="16dp">
+
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="#E3E3E3"
+        android:layout_marginBottom="8dp"
         android:hint="ID/Email"/>
 
     <EditText
@@ -17,18 +23,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:background="#E3E3E3"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="Login"
+        android:background="#002A5C"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp"/>
 
     <Button
         android:id="@+id/buttonSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:enabled="true"
-        android:text="Sign Up" />
+        android:text="Sign Up"
+        android:background="#005BBB"
+        android:textColor="#FFFFFF"/>
 </LinearLayout>

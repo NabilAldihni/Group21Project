@@ -5,19 +5,38 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 public abstract class EventsFragment extends Fragment {
-    public abstract int getRFragment();
+    private List<EventListItem> eventListItems;
 
-    // This should only be used in the subclasses
-    protected EventsFragment() {}
+    abstract int getEventFragmentId();
+    abstract List<EventListItem> getEventListItems();   // TODO: implement data retrieval from the server
+    abstract int getEventListRecyclerViewId();
+
+    public EventsFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(getRFragment(), container, false);
+        return inflater.inflate(getEventFragmentId(), container, false);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        eventListItems = getEventListItems();
 
+        RecyclerView eventListRecyclerView = view.findViewById(getEventListRecyclerViewId());
+        eventListRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        EventListViewAdapter eventListAdapter = new EventListViewAdapter(getContext(), eventListItems);
+        eventListRecyclerView.setAdapter(eventListAdapter);
+        eventListAdapter.notifyDataSetChanged();
+    }
 }

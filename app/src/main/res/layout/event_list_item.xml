@@ -3,15 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:paddingStart="5dp"
+    android:paddingTop="5dp"
+    android:paddingEnd="5dp"
+    android:paddingBottom="5dp">
 
     <TextView
-        android:id="@+id/eventListItemTextView"
-        android:layout_width="wrap_content"
+        android:id="@+id/eventListItemName"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Event name"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/eventListItemStartTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Event start time"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eventListItemName" />
+
+    <TextView
+        android:id="@+id/eventListItemLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Event location"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eventListItemStartTime" />
+
+    <Button
+        android:id="@+id/eventListItemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event button action"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventListItemLocation" />
 </androidx.constraintlayout.widget.ConstraintLayout>

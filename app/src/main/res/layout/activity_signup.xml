@@ -42,22 +42,9 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
-
-    <EditText
-        android:id="@+id/editTextId"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="#E3E3E3"
-        android:hint="ID"
-        android:padding="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSignUp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonSignUp"
@@ -70,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/loginLink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextId" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
 
     <TextView
         android:id="@+id/signupTitleText"

@@ -32,7 +32,6 @@ public class Signup extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
 
         editTextEmail = findViewById(R.id.editTextEmail);
-        editTextId = findViewById(R.id.editTextId);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextUsername = findViewById(R.id.editTextUsername);
         Button buttonSignup = findViewById(R.id.buttonSignUp);
@@ -54,10 +53,9 @@ public class Signup extends AppCompatActivity {
     public void createNewUser() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
-        String id = editTextId.getText().toString().trim();
         String username = editTextUsername.getText().toString().trim();
 
-        if (email.isEmpty() || password.isEmpty() || id.isEmpty()) {
+        if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(Signup.this, "Please enter all details", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -67,7 +65,7 @@ public class Signup extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         String userId = mAuth.getCurrentUser().getUid();
-                        User user = new User(id, username, email);
+                        User user = new User(username, email);
 
                         firestore.collection("Users").document(userId).set(user)
                                 .addOnSuccessListener(aVoid -> {
@@ -79,9 +77,9 @@ public class Signup extends AppCompatActivity {
                                 });
                     } else {
                         if(task.getException() != null) {
-                            Log.e("SignupActivity", "Signup failed: " + task.getException().getMessage());
+                            Log.e("SignupActivity", task.getException().getMessage());
                         }
-                        Toast.makeText(Signup.this, "Signup failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Signup.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
 
                     }
                 });

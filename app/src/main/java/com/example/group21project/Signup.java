@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 
@@ -35,10 +36,18 @@ public class Signup extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextUsername = findViewById(R.id.editTextUsername);
         Button buttonSignup = findViewById(R.id.buttonSignUp);
+        TextView loginLink = findViewById(R.id.loginLink);
 
         buttonSignup.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 createNewUser();
+            }
+        });
+
+        loginLink.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                startActivity(new Intent(Signup.this, Login.class));
+                finish();
             }
         });
     }

@@ -14,16 +14,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (findViewById(R.id.fragment_container) != null) {
-            if (savedInstanceState != null) {
-                return;
-            }
-
-            SubmitComplaintsFragment myFragment = new SubmitComplaintsFragment();
-
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container, myFragment).commit();
-        }
-
     }
 }

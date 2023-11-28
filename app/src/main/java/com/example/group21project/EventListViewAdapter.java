@@ -32,6 +32,7 @@ public class EventListViewAdapter extends RecyclerView.Adapter<EventListViewHold
         holder.getEventNameView().setText(event.getName());
         holder.getEventStartTimeView().setText(event.getStartTimeString());
         holder.getEventLocationView().setText(event.getLocation());
+        holder.getEventActionButton().setText(event.getButtonName());
     }
 
     @Override

@@ -11,11 +11,12 @@ public class DepartmentEvent implements EventListItem {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private String location;
+    private String buttonName;
     private int capacity;
     // TODO: maybe separate attending with a different interface or at least don't modify the ArrayList directly
     private ArrayList<User> attending;  // TODO: change to ArrayList<String> storing the corresponding usernames
 
-    public DepartmentEvent(String name, String desc, LocalDateTime startTime, LocalDateTime endTime, String location,
+    public DepartmentEvent(String name, String desc, LocalDateTime startTime, LocalDateTime endTime, String location, String buttonName,
                            int capacity) {
         if (capacity < 0)
             throw new IllegalArgumentException("Event capacity must be non-negative");
@@ -27,6 +28,7 @@ public class DepartmentEvent implements EventListItem {
         this.endTime = endTime;
         this.location = location;
         this.capacity = capacity;
+        this.buttonName = buttonName;
         this.attending = new ArrayList<>();
     }
 
@@ -50,6 +52,9 @@ public class DepartmentEvent implements EventListItem {
 
     public String getLocation() {
         return location;
+    }
+    public String getButtonName() {
+        return buttonName;
     }
 
     public int getCapacity() {

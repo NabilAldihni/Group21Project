@@ -19,7 +19,6 @@ public class EventsActivity extends AppCompatActivity implements NavigationBarVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
-
         // Navigation setup
         BottomNavigationView eventsBottomNavView = findViewById(R.id.eventsBottomNavigation);
         eventsBottomNavView.setOnItemSelectedListener(this);

@@ -1,5 +1,18 @@
 package com.example.group21project;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
+
 import android.util.Log;
 import android.widget.Toast;
 
@@ -16,6 +29,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EventsUpcomingFragment extends EventsFragment {
+    private String buttonName = "RSVP!";
+    private Button PopUpButton;
+    private Dialog mDialog;
+
+    public EventsUpcomingFragment() {}
     private final DatabaseReference upcomingEventsRef;
 
     public EventsUpcomingFragment() {
@@ -76,5 +94,15 @@ public class EventsUpcomingFragment extends EventsFragment {
                 Toast.makeText(getContext(), "Failed to load event(s)", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    int getPopUpFragment() {
+        return 0;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 }

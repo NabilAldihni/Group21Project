@@ -14,9 +14,6 @@
         android:theme="@style/Theme.Group21Project"
         tools:targetApi="31">
         <activity
-            android:name=".SubmitComplaintsFragment"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

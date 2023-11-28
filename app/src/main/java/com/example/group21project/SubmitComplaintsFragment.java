@@ -1,14 +1,15 @@
 package com.example.group21project;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -20,15 +21,20 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SubmitComplaintsActivity extends AppCompatActivity {
+public class SubmitComplaintsFragment extends Fragment {
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_submit_complaints, container, false);
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_submit_complaints);
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        Button submitBtn = (Button) findViewById(R.id.submitComplaintBtn);
-        TextInputEditText complaintTextInput = (TextInputEditText) findViewById(R.id.complaintsTextInput);
+        Button submitBtn = (Button) view.findViewById(R.id.submitComplaintBtn);
+        TextInputEditText complaintTextInput = (TextInputEditText) view.findViewById(R.id.complaintsTextInput);
 
         submitBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {

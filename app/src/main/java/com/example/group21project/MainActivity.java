@@ -1,6 +1,5 @@
 package com.example.group21project;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -15,12 +14,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button yourButton = (Button) findViewById(R.id.button);
-
-        yourButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, SubmitComplaintsActivity.class));
+        if (findViewById(R.id.fragment_container) != null) {
+            if (savedInstanceState != null) {
+                return;
             }
-        });
+
+            SubmitComplaintsFragment myFragment = new SubmitComplaintsFragment();
+
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container, myFragment).commit();
+        }
+
     }
 }

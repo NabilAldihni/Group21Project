@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 
@@ -29,7 +30,7 @@ public class Login extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         Button buttonLogin = findViewById(R.id.buttonLogin);
-        Button buttonSignup = findViewById(R.id.buttonSignUp);
+        TextView signupLink = findViewById(R.id.signupLink);
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +39,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        buttonSignup.setOnClickListener(new View.OnClickListener() {
+        signupLink.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //Navigate to SignUp Activity
                 startActivity(new Intent(Login.this, Signup.class));

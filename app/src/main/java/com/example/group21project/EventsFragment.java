@@ -1,9 +1,13 @@
 package com.example.group21project;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,9 +20,12 @@ import java.util.List;
 public abstract class EventsFragment extends Fragment {
     private List<EventListItem> eventListItems;
 
+
     abstract int getEventFragmentId();
     abstract List<EventListItem> getEventListItems();   // TODO: implement data retrieval from the server
     abstract int getEventListRecyclerViewId();
+
+    abstract int getPopUpFragment();
 
     public EventsFragment() {}
 
@@ -38,5 +45,7 @@ public abstract class EventsFragment extends Fragment {
         EventListViewAdapter eventListAdapter = new EventListViewAdapter(getContext(), eventListItems);
         eventListRecyclerView.setAdapter(eventListAdapter);
         eventListAdapter.notifyDataSetChanged();
+
+
     }
 }

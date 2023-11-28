@@ -1,8 +1,12 @@
 package com.example.group21project;
 
+import android.app.Dialog;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +16,8 @@ public class EventListViewHolder extends RecyclerView.ViewHolder {
     private final TextView eventStartTimeView;
     private final TextView eventLocationView;
     private final Button eventButton;
+    private final Dialog mDialog;
+
 
     public EventListViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -19,6 +25,26 @@ public class EventListViewHolder extends RecyclerView.ViewHolder {
         eventStartTimeView = itemView.findViewById(R.id.eventListItemStartTime);
         eventLocationView = itemView.findViewById(R.id.eventListItemLocation);
         eventButton = itemView.findViewById(R.id.eventListItemButton);
+        mDialog = new Dialog(eventButton.getContext());
+
+        eventButton.setOnClickListener(new View.OnClickListener() {
+       @Override
+       public void onClick(View v) {
+           Log.d("TAG", "onClick: "+eventButton.getText().toString());
+           if (eventButton.getText().toString() == "RSVP!") {
+               mDialog.setContentView(R.layout.fragment_popup_rsvp);
+           } else if (eventButton.getText().toString() == "Leave a review!") {
+               mDialog.setContentView(R.layout.fragment_popup);
+           }
+           TextView textViewToChange = (TextView) mDialog.findViewById(R.id.textView2);
+           textViewToChange.setText("\n\n\n\nEvent: "+eventNameView.getText().toString() +"\n" +
+                   "Start Time: "+eventStartTimeView.getText().toString() + "\n" +
+                   "Location: "+eventLocationView.getText().toString());
+
+           mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+           mDialog.show();
+           }
+       });
     }
 
     public TextView getEventNameView() {
@@ -35,5 +61,9 @@ public class EventListViewHolder extends RecyclerView.ViewHolder {
 
     public Button getEventActionButton() {
         return eventButton;
+    }
+
+    int getPopUpFragment() {
+        return 0;
     }
 }

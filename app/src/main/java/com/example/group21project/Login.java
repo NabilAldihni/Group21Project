@@ -41,9 +41,7 @@ public class Login extends AppCompatActivity {
         buttonSignup.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //Navigate to SignUp Activity
-                Toast.makeText(Login.this, "click signup", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Login.this, Signup.class);
-                startActivity(intent);
+                startActivity(new Intent(Login.this, Signup.class));
                 finish();
             }
         });

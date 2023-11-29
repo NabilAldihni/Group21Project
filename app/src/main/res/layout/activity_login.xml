@@ -14,7 +14,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="#E3E3E3"
-        android:hint="ID/Email"
+        android:hint="Email"
         android:padding="12dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
         app:layout_constraintEnd_toEndOf="parent"

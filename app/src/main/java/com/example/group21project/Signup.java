@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class Signup extends AppCompatActivity {
 
     private EditText editTextEmail, editTextPassword, editTextId, editTextUsername;
+    private CheckBox checkBoxAdmin;
     private FirebaseAuth mAuth;
     private FirebaseFirestore firestore;
 
@@ -34,6 +36,7 @@ public class Signup extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextUsername = findViewById(R.id.editTextUsername);
+        checkBoxAdmin = findViewById(R.id.checkBoxAdmin);
         Button buttonSignup = findViewById(R.id.buttonSignUp);
         TextView loginLink = findViewById(R.id.loginLink);
 
@@ -54,6 +57,7 @@ public class Signup extends AppCompatActivity {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         String username = editTextUsername.getText().toString().trim();
+        boolean admin = checkBoxAdmin.isChecked();
 
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(Signup.this, "Please enter all details", Toast.LENGTH_SHORT).show();
@@ -65,7 +69,7 @@ public class Signup extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         String userId = mAuth.getCurrentUser().getUid();
-                        User user = new User(username, email);
+                        User user = new User(username, email, admin);
 
                         firestore.collection("Users").document(userId).set(user)
                                 .addOnSuccessListener(aVoid -> {

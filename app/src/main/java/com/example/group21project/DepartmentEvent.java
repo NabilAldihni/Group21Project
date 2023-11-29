@@ -12,7 +12,8 @@ public class DepartmentEvent implements EventListItem {
     private LocalDateTime endTime;
     private String location;
     private int capacity;
-    private ArrayList<User> attending;  // TODO: maybe separate this with a different interface
+    // TODO: maybe separate attending with a different interface or at least don't modify the ArrayList directly
+    private ArrayList<User> attending;  // TODO: change to ArrayList<String> storing the corresponding usernames
 
     public DepartmentEvent(String name, String desc, LocalDateTime startTime, LocalDateTime endTime, String location,
                            int capacity) {
@@ -28,6 +29,8 @@ public class DepartmentEvent implements EventListItem {
         this.capacity = capacity;
         this.attending = new ArrayList<>();
     }
+
+    public DepartmentEvent() {}
 
     public String getName() {
         return name;

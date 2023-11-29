@@ -11,16 +11,21 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.List;
 
 public abstract class EventsFragment extends Fragment {
-    private List<EventListItem> eventListItems;
+    protected final FirebaseDatabase eventsDatabase;
+    protected List<EventListItem> eventListItems;
 
     abstract int getEventFragmentId();
     abstract List<EventListItem> getEventListItems();   // TODO: implement data retrieval from the server
     abstract int getEventListRecyclerViewId();
 
-    public EventsFragment() {}
+    public EventsFragment() {
+        eventsDatabase = FirebaseDatabase.getInstance();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

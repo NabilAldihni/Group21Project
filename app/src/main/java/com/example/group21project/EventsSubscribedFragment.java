@@ -37,8 +37,4 @@ public class EventsSubscribedFragment extends EventsFragment {
         return R.id.subscribedEventsView;
     }
 
-    @Override
-    int getPopUpFragment() {
-        return 0;
-    }
 }

@@ -43,8 +43,5 @@ public class EventsAttendedFragment extends EventsFragment {
         return R.id.attendedEventsView;
     }
 
-    @Override
-    int getPopUpFragment() {
-        return R.layout.fragment_popup;
-    }
+
 }

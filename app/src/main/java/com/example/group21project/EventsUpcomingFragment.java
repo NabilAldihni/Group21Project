@@ -33,7 +33,6 @@ public class EventsUpcomingFragment extends EventsFragment {
     private Button PopUpButton;
     private Dialog mDialog;
 
-    public EventsUpcomingFragment() {}
     private final DatabaseReference upcomingEventsRef;
 
     public EventsUpcomingFragment() {
@@ -96,10 +95,6 @@ public class EventsUpcomingFragment extends EventsFragment {
         });
     }
 
-    @Override
-    int getPopUpFragment() {
-        return 0;
-    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

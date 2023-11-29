@@ -31,9 +31,9 @@ public class EventListViewHolder extends RecyclerView.ViewHolder {
        @Override
        public void onClick(View v) {
            Log.d("TAG", "onClick: "+eventButton.getText().toString());
-           if (eventButton.getText().toString() == "RSVP!") {
+           if (eventButton.getText().toString() == "RSVP") {
                mDialog.setContentView(R.layout.fragment_popup_rsvp);
-           } else if (eventButton.getText().toString() == "Leave a review!") {
+           } else if (eventButton.getText().toString().equals("Event action button")) {
                mDialog.setContentView(R.layout.fragment_popup);
            }
            TextView textViewToChange = (TextView) mDialog.findViewById(R.id.textView2);

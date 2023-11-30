@@ -13,6 +13,22 @@ public class EventsSubscribedFragment extends EventsFragment {
     }
 
     @Override
+    protected int getEventListRecyclerViewId() {
+        return R.id.subscribedEventsView;
+    }
+
+    @Override
+    int getPopupFragmentId() {
+        return R.layout.fragment_popup_rsvp;
+    }
+
+    @Override
+    int getPopupFragmentTextId() {
+        return R.id.eventRSVPPopupText;
+    }
+
+
+    @Override
     List<EventListItem> getEventListItems() {
         ArrayList<EventListItem> eventListItems = new ArrayList<>();
         eventListItems.add(new DepartmentEvent("A Subscribed Event", "Check this event out! It was subscribed to",
@@ -31,10 +47,4 @@ public class EventsSubscribedFragment extends EventsFragment {
                 "HLB 101", 235));
         return eventListItems;
     }
-
-    @Override
-    protected int getEventListRecyclerViewId() {
-        return R.id.subscribedEventsView;
-    }
-
 }

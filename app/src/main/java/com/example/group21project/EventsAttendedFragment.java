@@ -13,6 +13,21 @@ public class EventsAttendedFragment extends EventsFragment {
     }
 
     @Override
+    protected int getEventListRecyclerViewId() {
+        return R.id.attendedEventsView;
+    }
+
+    @Override
+    int getPopupFragmentId() {
+        return R.layout.fragment_popup;
+    }
+
+    @Override
+    int getPopupFragmentTextId() {
+        return R.id.eventAttendedPopupText;
+    }
+
+    @Override
     List<EventListItem> getEventListItems() {
         ArrayList<EventListItem> eventListItems = new ArrayList<>();
         eventListItems.add(new DepartmentEvent("An Attended Event", "This event was attended already.",
@@ -30,11 +45,4 @@ public class EventsAttendedFragment extends EventsFragment {
                 "HLB 101", 235));
         return eventListItems;
     }
-
-    @Override
-    protected int getEventListRecyclerViewId() {
-        return R.id.attendedEventsView;
-    }
-
-
 }

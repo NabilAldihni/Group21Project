@@ -7,7 +7,7 @@ public class AddEventsInputValidator {
                                        String eventLocation, String eventCapacity) {
         if (stringIsBlank(eventName))
             return false;
-        else if (startTime.isAfter(endTime))
+        else if (LocalDateTime.now().isAfter(startTime) || startTime.isAfter(endTime))
             return false;
         else if (stringIsBlank(eventLocation))
             return false;

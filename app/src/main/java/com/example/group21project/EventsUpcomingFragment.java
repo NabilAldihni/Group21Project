@@ -1,19 +1,8 @@
 package com.example.group21project;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.DialogFragment;
-
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,10 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EventsUpcomingFragment extends EventsFragment {
-    private String buttonName = "RSVP!";
-    private Button PopUpButton;
-    private Dialog mDialog;
-
     private final DatabaseReference upcomingEventsRef;
 
     public EventsUpcomingFragment() {
@@ -45,26 +30,36 @@ public class EventsUpcomingFragment extends EventsFragment {
     }
 
     @Override
-    List<EventListItem> getEventListItems() {
-//        ArrayList<EventListItem> eventListItems = new ArrayList<>();
-//        eventListItems.add(new DepartmentEvent("A Super Cool Event", "This is a super cool event!",
-//                LocalDateTime.of(2023, 11, 22, 12, 0),
-//                LocalDateTime.of(2023, 11, 22, 14, 30),
-//                "IC 130", 200));
-//        eventListItems.add(new DepartmentEvent("Not So Cool Event", "This event is mid.",
-//                LocalDateTime.of(2023, 11, 22, 10, 10),
-//                LocalDateTime.of(2023, 11, 23, 15, 45),
-//                "SW 128", 10));
-//
-//        return eventListItems;
-        fetchUpcomingEvents();
-        Log.d("EventFragmentFirebaseDebug", "fetchUpcomingEvents() successful");
-        return eventListItems;
+    protected int getEventListRecyclerViewId() {
+        return R.id.upcomingEventsView;
     }
 
     @Override
-    protected int getEventListRecyclerViewId() {
-        return R.id.upcomingEventsView;
+    int getPopupFragmentId() {
+        return R.layout.fragment_popup_rsvp;
+    }
+
+    @Override
+    int getPopupFragmentTextId() {
+        return R.id.eventRSVPPopupText;
+    }
+
+    @Override
+    List<EventListItem> getEventListItems() {
+        ArrayList<EventListItem> eventListItems = new ArrayList<>();
+        eventListItems.add(new DepartmentEvent("A Super Cool Event", "This is a super cool event!",
+                LocalDateTime.of(2023, 11, 22, 12, 0),
+                LocalDateTime.of(2023, 11, 22, 14, 30),
+                "IC 130", 200));
+        eventListItems.add(new DepartmentEvent("Not So Cool Event", "This event is mid.",
+                LocalDateTime.of(2023, 11, 22, 10, 10),
+                LocalDateTime.of(2023, 11, 23, 15, 45),
+                "SW 128", 10));
+
+        return eventListItems;
+//        fetchUpcomingEvents();
+//        Log.d("EventFragmentFirebaseDebug", "fetchUpcomingEvents() successful");
+//        return eventListItems;
     }
 
     private void fetchUpcomingEvents() {

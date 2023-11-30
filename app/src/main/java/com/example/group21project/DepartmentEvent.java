@@ -1,11 +1,10 @@
 package com.example.group21project;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class DepartmentEvent implements EventListItem {
-    private static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("h:mm a EEEE, MMMM d, yyyy");
+//    private static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("h:mm a EEEE, MMMM d, yyyy");
     private String name;
     private String desc;
     private LocalDateTime startTime;
@@ -13,9 +12,9 @@ public class DepartmentEvent implements EventListItem {
     private String location;
     private int capacity;
     // TODO: maybe separate attending with a different interface or at least don't modify the ArrayList directly
-    private ArrayList<User> attending;  // TODO: change to ArrayList<String> storing the corresponding usernames
+    private ArrayList<String> attending;
 
-    public DepartmentEvent(String name, String desc, LocalDateTime startTime, LocalDateTime endTime, String location, String buttonName,
+    public DepartmentEvent(String name, String desc, LocalDateTime startTime, LocalDateTime endTime, String location,
                            int capacity) {
         if (capacity < 0)
             throw new IllegalArgumentException("Event capacity must be non-negative");
@@ -56,13 +55,14 @@ public class DepartmentEvent implements EventListItem {
         return capacity;
     }
 
-    public ArrayList<User> getAttending() {
+    public ArrayList<String> getAttending() {
         return attending;
     }
 
     @Override
     public String getStartTimeString() {
-        return this.endTime.format(timeFormatter);
+//        return this.endTime.format(timeFormatter);
+        return EventListItem.getFormattedTimeString(startTime);
     }
 
     public void setName(String name) {
@@ -85,7 +85,7 @@ public class DepartmentEvent implements EventListItem {
         this.capacity = capacity;
     }
 
-    public void setAttending(ArrayList<User> attending) {
+    public void setAttending(ArrayList<String> attending) {
         this.attending = attending;
     }
 }

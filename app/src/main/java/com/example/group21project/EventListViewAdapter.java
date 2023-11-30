@@ -13,17 +13,23 @@ import java.util.List;
 public class EventListViewAdapter extends RecyclerView.Adapter<EventListViewHolder> {
     private final Context eventListContext;
     private final List<EventListItem> eventListItems;
+    private final int popupFragmentId;
+    private final int popupFragmentTextId;
 
-    public EventListViewAdapter(Context eventListContext, List<EventListItem> eventListItems) {
+
+    public EventListViewAdapter(Context eventListContext, List<EventListItem> eventListItems, int popupFragmentId,
+                                int popupFragmentTextId) {
         this.eventListContext = eventListContext;
         this.eventListItems = eventListItems;
+        this.popupFragmentId = popupFragmentId;
+        this.popupFragmentTextId = popupFragmentTextId;
     }
 
     @NonNull
     @Override
     public EventListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(eventListContext).inflate(R.layout.event_list_item, parent, false);
-        return new EventListViewHolder(view);
+        return new EventListViewHolder(view, popupFragmentId, popupFragmentTextId);
     }
 
     @Override
@@ -32,7 +38,6 @@ public class EventListViewAdapter extends RecyclerView.Adapter<EventListViewHold
         holder.getEventNameView().setText(event.getName());
         holder.getEventStartTimeView().setText(event.getStartTimeString());
         holder.getEventLocationView().setText(event.getLocation());
-        //holder.getEventActionButton().setText(event.getButtonName());
     }
 
     @Override

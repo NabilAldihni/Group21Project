@@ -28,7 +28,7 @@
         android:layout_marginTop="18dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/eventRSVPPopupText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/rate"

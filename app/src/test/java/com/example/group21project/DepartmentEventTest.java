@@ -17,13 +17,13 @@ public class DepartmentEventTest {
     @Test
     public void invalidCapacity() {
         assertThrows(IllegalArgumentException.class,
-                () -> new DepartmentEvent("name", "desc", time, time, "location", "Event Button Action",-1));
+                () -> new DepartmentEvent("name", "desc", time, time, "location", -1));
     }
 
     @Test
     public void invalidTimes() {
         LocalDateTime endTime = time.minusMinutes(1);
         assertThrows(IllegalArgumentException.class,
-                () -> new DepartmentEvent("name", "desc", time, endTime, "location", "Event Button Action",0));
+                () -> new DepartmentEvent("name", "desc", time, endTime, "location", 0));
     }
 }

@@ -1,13 +1,9 @@
 package com.example.group21project;
 
-import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +22,8 @@ public abstract class EventsFragment extends Fragment {
     abstract int getEventFragmentId();
     abstract List<EventListItem> getEventListItems();   // TODO: implement data retrieval from the server
     abstract int getEventListRecyclerViewId();
+    abstract int getPopupFragmentId();
+    abstract int getPopupFragmentTextId();
 
     public EventsFragment() {
         eventsDatabase = FirebaseDatabase.getInstance();
@@ -44,7 +42,8 @@ public abstract class EventsFragment extends Fragment {
 
         RecyclerView eventListRecyclerView = view.findViewById(getEventListRecyclerViewId());
         eventListRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        EventListViewAdapter eventListAdapter = new EventListViewAdapter(getContext(), eventListItems);
+        EventListViewAdapter eventListAdapter = new EventListViewAdapter(getContext(), eventListItems,
+                getPopupFragmentId(), getPopupFragmentTextId());
         eventListRecyclerView.setAdapter(eventListAdapter);
         eventListAdapter.notifyDataSetChanged();
     }

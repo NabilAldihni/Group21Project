@@ -41,7 +41,7 @@
         />
 
     <RatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/starsRatingBarEventsAttended"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -60,13 +60,14 @@
         android:layout_marginRight="22dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textReviewInputEventsAttended"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Review" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/popUpSubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"

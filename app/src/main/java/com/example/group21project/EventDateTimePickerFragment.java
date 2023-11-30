@@ -25,7 +25,10 @@ public class EventDateTimePickerFragment extends Fragment {
     // WARNING: DatePickerDialog stores months in the range 0-11, while LocalDateTIme uses 1-12
     private LocalDateTime time;
 
-    public EventDateTimePickerFragment() {}
+    public EventDateTimePickerFragment() {
+        LocalTime closestHour = LocalTime.now().plusHours(1).withMinute(0);
+        time = LocalDateTime.of(LocalDate.now(), closestHour);
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -46,7 +49,6 @@ public class EventDateTimePickerFragment extends Fragment {
             }
         });
 
-        time = LocalDateTime.of(LocalDate.now(), LocalTime.NOON);
         timePreview = view.findViewById(R.id.eventTimePreview);
         timePreview.setText(EventListItem.getFormattedTimeString(time));
 

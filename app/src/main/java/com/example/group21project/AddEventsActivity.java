@@ -72,8 +72,8 @@ public class AddEventsActivity extends AppCompatActivity {
 
                 if (AddEventsInputValidator.validateEventInput(eventName, startTime, endTime, location, capacityStr)) {
                     int capacity = Integer.parseInt(capacityStr);
-                    DepartmentEvent event = new DepartmentEvent(eventName, desc, startTime, endTime, location,
-                            capacity);
+                    DepartmentEventFirebaseAdapter event = new DepartmentEventFirebaseAdapter(eventName, desc,
+                            startTime, endTime, location, capacity);
 
                     Snackbar snackbar = Snackbar.make(view, "", Snackbar.LENGTH_LONG);
                     snackbar.setAction("Dismiss", new View.OnClickListener() {

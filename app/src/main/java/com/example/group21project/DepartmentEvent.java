@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class DepartmentEvent implements EventListItem {
-//    private static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("h:mm a EEEE, MMMM d, yyyy");
     private String name;
     private String desc;
     private LocalDateTime startTime;
@@ -15,7 +14,7 @@ public class DepartmentEvent implements EventListItem {
     private ArrayList<String> attending;
 
     public DepartmentEvent(String name, String desc, LocalDateTime startTime, LocalDateTime endTime, String location,
-                           int capacity) {
+                           int capacity, ArrayList<String> attending) {
         if (capacity < 0)
             throw new IllegalArgumentException("Event capacity must be non-negative");
         else if (startTime.isAfter(endTime))
@@ -26,17 +25,16 @@ public class DepartmentEvent implements EventListItem {
         this.endTime = endTime;
         this.location = location;
         this.capacity = capacity;
-        this.attending = new ArrayList<>();
+        this.attending = attending;
     }
 
-    public DepartmentEvent() {}
+    public DepartmentEvent(String name, String desc, LocalDateTime startTime, LocalDateTime endTime, String location,
+                           int capacity) {
+        this(name, desc, startTime, endTime, location, capacity, new ArrayList<>());
+    }
 
     public String getName() {
         return name;
-    }
-
-    public String getDesc() {
-        return desc;
     }
 
     public LocalDateTime getStartTime() {
@@ -51,41 +49,8 @@ public class DepartmentEvent implements EventListItem {
         return location;
     }
 
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public ArrayList<String> getAttending() {
-        return attending;
-    }
-
     @Override
     public String getStartTimeString() {
-//        return this.endTime.format(timeFormatter);
         return EventListItem.getFormattedTimeString(startTime);
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public void setStartTime(LocalDateTime startTime) {
-        this.startTime = startTime;
-    }
-
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    public void setAttending(ArrayList<String> attending) {
-        this.attending = attending;
     }
 }

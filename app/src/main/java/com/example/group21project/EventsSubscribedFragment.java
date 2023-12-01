@@ -1,8 +1,6 @@
 package com.example.group21project;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 public class EventsSubscribedFragment extends EventsFragment {
     public EventsSubscribedFragment() {}
@@ -29,8 +27,8 @@ public class EventsSubscribedFragment extends EventsFragment {
 
 
     @Override
-    List<EventListItem> getEventListItems() {
-        ArrayList<EventListItem> eventListItems = new ArrayList<>();
+    void getEventListItems() {
+        eventListItems.clear();
         eventListItems.add(new DepartmentEvent("A Subscribed Event", "Check this event out! It was subscribed to",
                 LocalDateTime.of(2023, 11, 22, 11, 0),
                 LocalDateTime.of(2023, 11, 30, 14, 30),
@@ -45,6 +43,10 @@ public class EventsSubscribedFragment extends EventsFragment {
                 LocalDateTime.of(2023, 11, 26, 23, 0),
                 LocalDateTime.of(2023, 11, 27, 1, 30),
                 "HLB 101", 235));
-        return eventListItems;
+    }
+
+    @Override
+    boolean eventSatisfiesFilter(DepartmentEvent event) {
+        return true;    // TODO: check if user RSVP'd to the event
     }
 }

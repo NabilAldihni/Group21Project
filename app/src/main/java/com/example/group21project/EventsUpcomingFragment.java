@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 import java.time.LocalDateTime;
 
-public class EventsUpcomingFragment extends EventsFragment {
+public class EventsUpcomingFragment extends EventsChildFragment {
     public EventsUpcomingFragment() {}
 
     @Override

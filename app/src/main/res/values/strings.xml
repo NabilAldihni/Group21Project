@@ -56,4 +56,6 @@
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="menu_submit_complaints">Submit a complaint</string>
+    <string name="menu_events">Events</string>
+    <string name="menu_add_event">Add Event</string>
 </resources>

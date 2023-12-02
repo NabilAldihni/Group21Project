@@ -8,7 +8,7 @@
     android:paddingTop="10dp"
     android:paddingEnd="10dp"
     android:paddingBottom="10dp"
-    tools:context=".AddEventsActivity">
+    tools:context=".AddEventFragment">
 
     <TextView
         android:id="@+id/textView"

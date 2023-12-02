@@ -2,7 +2,7 @@ package com.example.group21project;
 
 import java.time.LocalDateTime;
 
-public class EventsSubscribedFragment extends EventsFragment {
+public class EventsSubscribedFragment extends EventsChildFragment {
     public EventsSubscribedFragment() {}
 
     @Override
@@ -24,7 +24,6 @@ public class EventsSubscribedFragment extends EventsFragment {
     int getPopupFragmentTextId() {
         return R.id.eventRSVPPopupText;
     }
-
 
     @Override
     void getEventListItems() {

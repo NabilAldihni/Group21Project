@@ -21,7 +21,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class EventsFragment extends Fragment {
+public abstract class EventsChildFragment extends Fragment {
     protected List<EventListItem> eventListItems;
     protected EventListViewAdapter eventListAdapter;
     private final FirebaseFirestore database;
@@ -35,7 +35,7 @@ public abstract class EventsFragment extends Fragment {
     // with respect to the start/end times and whether the user RSVP'd
     abstract boolean eventSatisfiesFilter(DepartmentEvent event);
 
-    public EventsFragment() {
+    public EventsChildFragment() {
         eventListItems = new ArrayList<>();
         database = FirebaseFirestore.getInstance();
     }

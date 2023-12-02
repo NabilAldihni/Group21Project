@@ -2,7 +2,7 @@ package com.example.group21project;
 
 import java.time.LocalDateTime;
 
-public class EventsAttendedFragment extends EventsFragment {
+public class EventsAttendedFragment extends EventsChildFragment {
     public EventsAttendedFragment() {}
 
     @Override

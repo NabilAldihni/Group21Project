@@ -1,10 +1,8 @@
 package com.example.group21project;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.NonNull;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -63,7 +61,8 @@ public class Login extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
-                        startActivity(new Intent(Login.this, MainActivity.class));
+                        // TODO: Check if admin or student and then send to corresponding activity
+                        startActivity(new Intent(Login.this, StudentActivity.class));
                         finish();
                     }else {
                         Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
@@ -76,9 +75,9 @@ public class Login extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             //User is already signed in, navigate to main activity
-            //Intent intent = new Intent(Login.this, MainActivity.class);
-            //startActivity(intent);
-            //finish();
+            // TODO: Check if admin or student and then send to corresponding activity
+            startActivity(new Intent(Login.this, StudentActivity.class));
+            finish();
         }
     }
 }

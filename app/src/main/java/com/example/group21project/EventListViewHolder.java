@@ -56,7 +56,7 @@ public class EventListViewHolder extends RecyclerView.ViewHolder {
                 final EditText reviewTextInput;
                 try {
                     submitButton = mDialog.findViewById(popupFragmentSubmitId);
-                    starsRating = mDialog.findViewById(R.id.starsRatingBarEventsAttended);
+                    starsRating = (RatingBar) mDialog.findViewById(R.id.starsRatingBarEventsAttended);
                     reviewTextInput = mDialog.findViewById(R.id.textReviewInputEventsAttended);
 
                     submitButton.setOnClickListener(new View.OnClickListener() {
@@ -68,24 +68,31 @@ public class EventListViewHolder extends RecyclerView.ViewHolder {
                             Log.d("TAG", "Event info: " + eventLocationView.getText().toString());
 
                         try {
-                            Log.d("STARS", "num of stars: " + starsRating.getNumStars());
-                            Log.d("EDIT TEXT", "review " + reviewTextInput.getText().toString());
-                            Map<String, Object> data = new HashMap<>();
-                            data.put("eventName", eventNameView.getText().toString());
-                            data.put("location", eventLocationView.getText().toString());
-                            data.put("numStars", starsRating.getNumStars());
-                            data.put("reviewTextInput", reviewTextInput.getText().toString());
-                            data.put("startTime", eventStartTimeView.getText().toString());
+                            Log.d("STARS", "num of stars: " + starsRating.getRating());
+                            if (0.5 <= starsRating.getNumStars() && starsRating.getNumStars() <= 5 && reviewTextInput.getText().toString().length() >= 1) {
+                                Log.d("EDIT TEXT", "review " + reviewTextInput.getText().toString());
+                                Map<String, Object> data = new HashMap<>();
+                                data.put("eventName", eventNameView.getText().toString());
+                                data.put("location", eventLocationView.getText().toString());
+                                data.put("numStars", starsRating.getNumStars());
+                                data.put("reviewTextInput", reviewTextInput.getText().toString());
+                                data.put("startTime", eventStartTimeView.getText().toString());
 
-                            database.collection("Reviews").add(data);
+                                database.collection("Reviews").add(data);
 
+                                Toast reviewConfirmation = Toast.makeText(submitButton.getContext(), "Sent!", Toast.LENGTH_SHORT);
+                                reviewConfirmation.show();
+                                mDialog.hide();
+
+                            } else {
+                                Toast invalid = Toast.makeText(submitButton.getContext(), "Please enter a review!", Toast.LENGTH_SHORT);
+                                invalid.show();
+                            }
 
                         } catch (Exception e) {
                             Log.d("EXCEPTION", "EXCEPTION");
                         }
-                            Toast toast = Toast.makeText(submitButton.getContext(), "Sent!", Toast.LENGTH_SHORT);
-                            toast.show();
-                            mDialog.hide();
+
                         }
                     });
                 }

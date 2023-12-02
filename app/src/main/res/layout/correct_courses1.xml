@@ -4,12 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment"
-
-    >
-
-
-
+    android:background="@drawable/gradient_background"
+    tools:context=".SecondFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -41,92 +37,94 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <ImageView
-            android:id="@+id/imageview_first"
-            android:layout_width="417dp"
-            android:layout_height="915dp"
-            android:alpha="0.5"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/new_background"
-            tools:layout_editor_absoluteX="-3dp" />
-
         <TextView
             android:id="@+id/textview_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:alpha="1"
+            android:layout_width="393dp"
+            android:layout_height="302dp"
+            android:layout_marginTop="52dp"
             android:fontFamily="@font/roboto_bold"
             android:gravity="center"
-            android:text="What Program are you Pursuing?"
-            android:textColor="#013A6F"
-            android:textSize="47sp"
+            android:text="You have all the right courses for this POSt! Select your admission category below:"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="45sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/my_toolbar" />
 
         <TextView
             android:id="@+id/textview_second"
-            android:layout_width="399dp"
-            android:layout_height="166dp"
-            android:layout_marginTop="4dp"
-            android:alpha="0.9"
+            android:layout_width="378dp"
+            android:layout_height="185dp"
+            android:layout_marginTop="-18dp"
             android:fontFamily="@font/roboto_bold"
             android:gravity="center"
-            android:text="Select one of the options below to learn more about the Computer Science (CS) programs at UTSC."
-            android:textColor="#013A6F"
-            android:textSize="34dp"
+            android:paddingStart="0dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="5dp"
+
+            android:text="‣ In-stream student: Admitted into a CS specialist/major from high school"
+            android:textAlignment="viewStart"
+            android:textColor="#3BFF7C"
+            android:textSize="35sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_first" />
+            app:layout_constraintTop_toBottomOf="@id/textview_first" />
 
-        <Button
-            android:id="@+id/buttonFirst"
-            android:layout_width="276dp"
-            android:layout_height="97dp"
-            android:layout_marginTop="28dp"
-            android:alpha="0.825"
-            android:backgroundTint="#013A6F"
+        <TextView
+            android:id="@+id/textview_second3"
+            android:layout_width="378dp"
+            android:layout_height="190dp"
+            android:layout_marginTop="-15dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="CS Specialist"
-            android:textSize="34sp"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+
+            android:paddingRight="5dp"
+            android:text="‣ Out-of-stream student: Admitted into a math/stats program from high school"
+            android:textAlignment="viewStart"
+            android:textColor="#3BFF7C"
+            android:textSize="35sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textview_second" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="276dp"
-            android:layout_height="97dp"
-            android:layout_marginTop="28dp"
+            android:id="@+id/in"
+            android:layout_width="160dp"
+            android:layout_height="79dp"
+            android:layout_marginTop="8dp"
             android:backgroundTint="#013A6F"
             android:fontFamily="@font/roboto_bold"
-            android:text="CS Major"
-            android:alpha="0.825"
-            android:textSize="34sp"
+            android:text="In"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonFirst" />
+            app:layout_constraintTop_toBottomOf="@+id/textview_second3" />
 
         <Button
-            android:id="@+id/button3"
-            android:layout_width="276dp"
-            android:layout_height="97dp"
-            android:layout_marginTop="28dp"
+            android:id="@+id/out"
+            android:layout_width="160dp"
+            android:layout_height="79dp"
+            android:layout_marginTop="8dp"
             android:backgroundTint="#013A6F"
             android:fontFamily="@font/roboto_bold"
-            android:text="CS Minor"
-            android:alpha="0.825"
-            android:textSize="34sp"
+            android:text="Out"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.824"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintTop_toBottomOf="@+id/textview_second3" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

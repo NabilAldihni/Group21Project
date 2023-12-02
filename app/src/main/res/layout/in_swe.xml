@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/A67textInputLayout"
+        style="@android:style/Holo.ButtonBar.AlertDialog"
+        android:layout_width="331dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="185dp"
+        android:layout_marginEnd="53dp"
+        android:duplicateParentState="true"
+        android:hint="CSC/MAT A67"
+        android:textColorHint="#FFFFFF"
+        android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+        app:boxStrokeColor="@color/selector"
+        app:boxStrokeWidth="4dp"
+        app:boxStrokeWidthFocused="4dp"
+        app:endIconMode="clear_text"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/A67textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textCursorDrawable="@drawable/custom_cursor"
+            android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+            app:boxStrokeColor="@color/selector"
+            app:boxStrokeWidth="4dp"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/A08textInputLayout"
+        style="@android:style/Holo.ButtonBar.AlertDialog"
+        android:layout_width="331dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="53dp"
+        android:duplicateParentState="true"
+        android:hint="CSC A08"
+        android:textColorHint="#FFFFFF"
+        android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+        app:boxStrokeColor="@color/selector"
+        app:boxStrokeWidth="4dp"
+        app:boxStrokeWidthFocused="4dp"
+        app:endIconMode="clear_text"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/A67textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/A08textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textCursorDrawable="@drawable/custom_cursor"
+            android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+            app:boxStrokeColor="@color/selector"
+            app:boxStrokeWidth="4dp"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/A48textInputLayout"
+        style="@android:style/Holo.ButtonBar.AlertDialog"
+        android:layout_width="331dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="53dp"
+        android:duplicateParentState="true"
+        android:hint="CSC A48"
+        android:textColorHint="#FFFFFF"
+        android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+        app:boxStrokeColor="@color/selector"
+        app:boxStrokeWidth="4dp"
+        app:boxStrokeWidthFocused="4dp"
+        app:endIconMode="clear_text"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/A08textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/A48textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textCursorDrawable="@drawable/custom_cursor"
+            android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+            app:boxStrokeColor="@color/selector"
+            app:boxStrokeWidth="4dp"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/A22textInputLayout"
+        style="@android:style/Holo.ButtonBar.AlertDialog"
+        android:layout_width="331dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="53dp"
+        android:duplicateParentState="true"
+        android:hint="MAT A22"
+        android:textColorHint="#FFFFFF"
+        android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+        app:boxStrokeColor="@color/selector"
+        app:boxStrokeWidth="4dp"
+        app:boxStrokeWidthFocused="4dp"
+        app:endIconMode="clear_text"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/A48textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/A22textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textCursorDrawable="@drawable/custom_cursor"
+            android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+            app:boxStrokeColor="@color/selector"
+            app:boxStrokeWidth="4dp"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/A31textInputLayout"
+        style="@android:style/Holo.ButtonBar.AlertDialog"
+        android:layout_width="331dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="-25dp"
+        android:layout_marginEnd="53dp"
+        android:duplicateParentState="true"
+        android:hint="MAT A31"
+        android:textColorHint="#FFFFFF"
+        android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+        app:boxStrokeColor="@color/selector"
+        app:boxStrokeWidth="4dp"
+        app:boxStrokeWidthFocused="4dp"
+        app:endIconMode="clear_text"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/A22textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/A31textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textCursorDrawable="@drawable/custom_cursor"
+            android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+            app:boxStrokeColor="@color/selector"
+            app:boxStrokeWidth="4dp"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/A37textInputLayout"
+        style="@android:style/Holo.ButtonBar.AlertDialog"
+        android:layout_width="331dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="53dp"
+        android:duplicateParentState="true"
+        android:hint="MAT A37"
+        android:textColorHint="#FFFFFF"
+        android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+        app:boxStrokeColor="@color/selector"
+        app:boxStrokeWidth="4dp"
+        app:boxStrokeWidthFocused="4dp"
+        app:endIconMode="clear_text"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/A31textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/A37textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textCursorDrawable="@drawable/custom_cursor"
+            android:theme="@style/Widget.AppTheme.TextInputLayout.FilledBox.Dense"
+            app:boxStrokeColor="@color/selector"
+            app:boxStrokeWidth="4dp"
+            app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

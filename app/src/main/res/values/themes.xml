@@ -25,5 +25,37 @@
             <item name="android:textSize">18sp</item>
         </style>
 
+    <style name="HelperTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FF0000</item>
+
+        <!-- Add any other style attributes you want to customize for the helper text -->
+    </style>
+
+    <style name="Widget.AppTheme.TextInputLayout.FilledBox.Dense" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="boxStrokeColor">@color/selector</item>
+        <item name="boxStrokeWidth">6dp</item>
+        <item name="hintTextColor">#FFFFFF</item>
+        <item name="errorTextColor">#FF0000</item>
+        <item name="colorControlActivated">#FFFFFF</item>
+        <item name="colorOnSurface">#FFFFFF</item>
+        <item name="colorPrimary">#FFFFFF</item>
+        <item name="android:textStyle">bold</item> <!-- Set your desired text style -->
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">34dp</item>
+
+    </style>
+
+    <style name="ErrorAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#FF0000</item> <!-- Set your desired text color -->
+        <item name="android:textStyle">bold</item> <!-- Set your desired text style -->
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">18dp</item>
+        <!-- You can add more styling attributes as needed -->
+    </style>
+
+
+
+
 
 </resources>

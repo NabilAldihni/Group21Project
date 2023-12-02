@@ -26,6 +26,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".SpecialistPage" />
+        <activity android:name=".MajorPage" />
+        <activity android:name=".MinorPage" />
+        <activity android:name=".SWE" />
+        <activity android:name=".CorrectCourses1" />
+        <activity android:name=".IncorrectCourses" />
+        <activity android:name=".in_swe" />
+        <activity android:name=".out_swe" />
+
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

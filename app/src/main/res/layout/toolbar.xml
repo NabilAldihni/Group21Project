@@ -16,7 +16,7 @@
 <TextView
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-    android:fontFamily="sans-serif-condensed"
+    android:fontFamily="@font/roboto_bold"
     android:gravity="center"
     android:text="POSt Requirements"
     android:textColor="@android:color/white"

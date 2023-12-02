@@ -9,8 +9,6 @@
     >
 
 
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,87 +41,110 @@
 
         <ImageView
             android:id="@+id/imageview_first"
-            android:layout_width="417dp"
-            android:layout_height="915dp"
-            android:alpha="0.5"
+            android:layout_width="427dp"
+            android:layout_height="914dp"
+            android:alpha="0.45"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/new_background"
-            tools:layout_editor_absoluteX="-3dp" />
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/new_background" />
 
         <TextView
             android:id="@+id/textview_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_width="309dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="64dp"
             android:alpha="1"
             android:fontFamily="@font/roboto_bold"
             android:gravity="center"
-            android:text="What Program are you Pursuing?"
+            android:text="CS Specialist"
             android:textColor="#013A6F"
-            android:textSize="47sp"
+            android:textSize="50sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.509"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textview_second"
-            android:layout_width="399dp"
-            android:layout_height="166dp"
-            android:layout_marginTop="4dp"
-            android:alpha="0.9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
+            android:alpha="1"
             android:fontFamily="@font/roboto_bold"
             android:gravity="center"
-            android:text="Select one of the options below to learn more about the Computer Science (CS) programs at UTSC."
+            android:paddingStart="0dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="5dp"
+            android:text="The Specialist program involves an in-depth study within the field of computer science. Select an option below to see if you meet the requirements for a specific stream and qualify for POSt."
+            android:textAlignment="center"
             android:textColor="#013A6F"
-            android:textSize="34dp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_first" />
+            app:layout_constraintTop_toBottomOf="@id/textview_first" />
 
         <Button
             android:id="@+id/buttonFirst"
-            android:layout_width="276dp"
-            android:layout_height="97dp"
-            android:layout_marginTop="28dp"
+            android:layout_width="295dp"
+            android:layout_height="99dp"
+            android:layout_marginTop="8dp"
             android:alpha="0.825"
             android:backgroundTint="#013A6F"
             android:fontFamily="@font/roboto_bold"
-            android:text="CS Specialist"
-            android:textSize="34sp"
+            android:text="Software Engineering"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textview_second" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="276dp"
-            android:layout_height="97dp"
-            android:layout_marginTop="28dp"
+            android:layout_width="295dp"
+            android:layout_height="99dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.825"
             android:backgroundTint="#013A6F"
             android:fontFamily="@font/roboto_bold"
-            android:text="CS Major"
-            android:alpha="0.825"
-            android:textSize="34sp"
+            android:text="Comprehensive"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonFirst" />
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="276dp"
-            android:layout_height="97dp"
-            android:layout_marginTop="28dp"
+            android:layout_width="295dp"
+            android:layout_height="99dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="8dp"
+            android:alpha="0.825"
             android:backgroundTint="#013A6F"
             android:fontFamily="@font/roboto_bold"
-            android:text="CS Minor"
+            android:text="Entrepreneurship"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="295dp"
+            android:layout_height="99dp"
+            android:layout_marginTop="8dp"
             android:alpha="0.825"
-            android:textSize="34sp"
+            android:backgroundTint="#013A6F"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Information Systems"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button2" />

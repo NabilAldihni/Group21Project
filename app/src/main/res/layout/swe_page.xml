@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".SecondFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp">
+
+
+        <include
+            android:id="@+id/my_toolbar"
+            style="@style/ToolbarStyle"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:padding="0dp"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="0dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textview_first"
+            android:layout_width="385dp"
+            android:layout_height="235dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="Have you Taken/Planning to Take These Courses?"
+            android:textColor="@color/white"
+            android:textSize="47sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="5dp"
+
+            android:text="‣ CSC / MAT A67"
+            android:textAlignment="center"
+            android:textColor="#3BFF7C"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_first" />
+
+        <TextView
+            android:id="@+id/textview_second2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="5dp"
+            android:text="‣ CSC A48"
+            android:textAlignment="center"
+            android:textColor="#3BFF7C"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.081"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_second7" />
+
+        <TextView
+            android:id="@+id/textview_second7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="5dp"
+            android:text="‣ CSC A08"
+            android:textAlignment="center"
+            android:textColor="#3BFF7C"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.081"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_second" />
+
+        <TextView
+            android:id="@+id/textview_second4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="5dp"
+            android:text="‣ MAT A37"
+            android:textAlignment="center"
+            android:textColor="#3BFF7C"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.069"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_second6" />
+
+        <TextView
+            android:id="@+id/textview_second6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="5dp"
+            android:text="‣ MAT A31"
+            android:textAlignment="center"
+            android:textColor="#3BFF7C"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.085"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_second5" />
+
+        <TextView
+            android:id="@+id/textview_second5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="5dp"
+            android:text="‣ MAT A22"
+            android:textAlignment="center"
+            android:textColor="#3BFF7C"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.069"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_second2" />
+
+        <Button
+            android:id="@+id/yesbutton"
+            android:layout_width="166dp"
+            android:layout_height="92dp"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="#013A6F"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Yes"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.057"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_second4" />
+
+        <Button
+            android:id="@+id/nobutton"
+            android:layout_width="178dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="#013A6F"
+            android:fontFamily="@font/roboto_bold"
+            android:text="No"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.892"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_second4" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

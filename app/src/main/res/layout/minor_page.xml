@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp">
+
+
+        <include
+            android:id="@+id/my_toolbar"
+            style="@style/ToolbarStyle"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:padding="0dp"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="0dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imageview_first"
+            android:layout_width="427dp"
+            android:layout_height="914dp"
+            android:alpha="0.45"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/new_background" />
+
+        <!--<TextView
+            android:id="@+id/textview_first"
+            android:layout_width="300dp"
+            android:layout_height="91dp"
+            android:layout_marginTop="60dp"
+            android:alpha="1"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="CS Major"
+            android:textColor="#013A6F"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview_second"
+            android:layout_width="399dp"
+            android:layout_height="621dp"
+            android:layout_marginTop="-30dp"
+            android:alpha="1"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="The Major program provides a broader overview of computer science and offers less courses than the Specialist. If you decide to pursue a CS major, you will need to choose another Major, Specialist or two minors to graduate. "
+            android:textAlignment="center"
+            android:textColor="#013A6F"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/buttonFirst"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_first"
+            app:layout_constraintVertical_bias="0" /> -->
+
+        <TextView
+            android:id="@+id/textview_first"
+            android:layout_width="378dp"
+            android:layout_height="79dp"
+            android:layout_marginTop="64dp"
+            android:alpha="1"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="CS Minor"
+            android:textColor="#013A6F"
+            android:textSize="55sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview_second"
+            android:layout_width="394dp"
+            android:layout_height="602dp"
+            android:layout_marginTop="-20dp"
+            android:alpha="1"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:text="The Minor program provides a basic introduction into the field of computer science. It can also complement other programs. If you decide to pursue a CS Minor, you will need to choose a Specialist, two Majors or one Major and another Minor in order to meet graduation requirements."
+            android:textAlignment="center"
+            android:textColor="#013A6F"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_first" />
+
+        <Button
+            android:id="@+id/buttonFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="105dp"
+            android:alpha="0.825"
+            android:backgroundTint="#013A6F"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Learn more"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_second" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

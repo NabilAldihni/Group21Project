@@ -8,4 +8,16 @@
             android:id="@+id/nav_submit_complaints"
             android:title="@string/menu_submit_complaints" />
     </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_events"
+            android:title="@string/menu_events" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_add_event"
+            android:title="@string/menu_add_event" />
+    </group>
 </menu>

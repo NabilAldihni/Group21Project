@@ -7,6 +7,12 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="event_bottom_nav_upcoming">Upcoming</string>
+    <string name="event_bottom_nav_subscribed">My Events</string>
+    <string name="event_bottom_nav_attended">Attended</string>
+
+    <string name="rate">Rate</string>
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
@@ -50,4 +56,6 @@
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="menu_submit_complaints">Submit a complaint</string>
+    <string name="menu_events">Events</string>
+    <string name="menu_add_event">Add Event</string>
 </resources>

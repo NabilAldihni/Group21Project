@@ -16,6 +16,7 @@
         android:background="#E3E3E3"
         android:hint="Email"
         android:padding="12dp"
+        android:singleLine="true"
         app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

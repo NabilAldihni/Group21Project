@@ -33,6 +33,11 @@ public class EventsUpcomingFragment extends EventsFragment {
     }
 
     @Override
+    int getPopupFragmentSubmitId() {
+        return R.id.popUpSubmitButton;
+    }
+
+    @Override
     void getEventListItems() {
 //        ArrayList<EventListItem> eventListItems = new ArrayList<>();
 //        eventListItems.add(new DepartmentEvent("A Super Cool Event", "This is a super cool event!",

@@ -31,6 +31,7 @@ public abstract class EventsFragment extends Fragment {
     abstract int getEventListRecyclerViewId();
     abstract int getPopupFragmentId();
     abstract int getPopupFragmentTextId();
+    abstract int getPopupFragmentSubmitId();
     // TODO: implement filters in subclasses after merging and decide on what event counts as "upcoming" and "attended"
     // with respect to the start/end times and whether the user RSVP'd
     abstract boolean eventSatisfiesFilter(DepartmentEvent event);
@@ -54,7 +55,7 @@ public abstract class EventsFragment extends Fragment {
         RecyclerView eventListRecyclerView = view.findViewById(getEventListRecyclerViewId());
         eventListRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         eventListAdapter = new EventListViewAdapter(getContext(), eventListItems,
-                getPopupFragmentId(), getPopupFragmentTextId());
+                getPopupFragmentId(), getPopupFragmentTextId(), getPopupFragmentSubmitId());
         eventListRecyclerView.setAdapter(eventListAdapter);
         eventListAdapter.notifyDataSetChanged();
     }

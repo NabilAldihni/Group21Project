@@ -17,12 +17,17 @@ public class EventsSubscribedFragment extends EventsFragment {
 
     @Override
     int getPopupFragmentId() {
-        return R.layout.fragment_popup_rsvp;
+        return R.layout.fragment_popup_more_info;
     }
 
     @Override
     int getPopupFragmentTextId() {
-        return R.id.eventRSVPPopupText;
+        return R.id.eventAttendedPopupText;
+    }
+
+    @Override
+    int getPopupFragmentSubmitId() {
+        return R.id.popUpSubmitButton;
     }
 
 

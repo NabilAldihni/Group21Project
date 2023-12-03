@@ -1,5 +1,6 @@
 package com.example.group21project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -11,8 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
 
@@ -62,9 +68,28 @@ public class Login extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
-                        // TODO: Check if admin or student and then send to corresponding activity
-                        startActivity(new Intent(Login.this, AdminActivity.class));
-                        finish();
+                        if (user != null) {
+                            String userId = user.getUid();
+
+                            DocumentReference docRef = FirebaseFirestore.getInstance().collection("Users").document(userId);
+
+                            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        DocumentSnapshot document = task.getResult();
+                                        if (document.exists()) {
+                                            if ((boolean) document.getData().get("admin") == true) {
+                                                startActivity(new Intent(Login.this, AdminActivity.class));
+                                            } else {
+                                                startActivity(new Intent(Login.this, StudentActivity.class));
+                                            }
+                                            finish();
+                                        }
+                                    }
+                                }
+                            });
+                        }
                     }else {
                         Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                     }
@@ -75,10 +100,30 @@ public class Login extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            //User is already signed in, navigate to main activity
-            // TODO: Check if admin or student and then send to corresponding activity
-            startActivity(new Intent(Login.this, StudentActivity.class));
-            finish();
+            //User is already signed in
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null) {
+                String userId = user.getUid();
+
+                DocumentReference docRef = FirebaseFirestore.getInstance().collection("Users").document(userId);
+
+                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                if ((boolean) document.getData().get("admin") == true) {
+                                    startActivity(new Intent(Login.this, AdminActivity.class));
+                                } else {
+                                    startActivity(new Intent(Login.this, StudentActivity.class));
+                                }
+                                finish();
+                            }
+                        }
+                    }
+                });
+            }
         }
     }
 }

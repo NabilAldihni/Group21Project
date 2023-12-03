@@ -13,6 +13,9 @@
 
     <string name="rate">Rate</string>
 
+    <string name="channel_name">Event Notifications</string>
+    <string name="channel_description">Receive updates on new events</string>
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus

@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class Login extends AppCompatActivity {
 
@@ -32,6 +33,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        FirebaseMessaging.getInstance().subscribeToTopic("your_topic");
         mAuth = FirebaseAuth.getInstance();
 
         editTextEmail = findViewById(R.id.editTextEmail);

@@ -2,27 +2,26 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ComplaintsListFragment">
+    tools:context=".AnnouncementsListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_complaints_list"
+        android:id="@+id/recycler_announcements_list"
         android:layout_width="326dp"
         android:layout_height="615dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/complaintsListTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/announcementsListTitle" />
 
     <TextView
-        android:id="@+id/complaintsListTitle"
+        android:id="@+id/announcementsListTitle"
         android:layout_width="317dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:text="Here is a list of all the complaints that students have submitted"
-        app:layout_constraintBottom_toTopOf="@+id/recycler_complaints_list"
+        android:text="These are the latest announcements"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_announcements_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

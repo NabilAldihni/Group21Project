@@ -26,7 +26,7 @@ public class ComplaintsAdapter extends RecyclerView.Adapter<ComplaintsAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Complaint complaint = complaintList.get(position);
-        holder.descriptionTextView.setText(complaint.getDescription());
+        holder.descriptionTextView.setText(" - " + complaint.getDescription());
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.example.group21project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -62,7 +63,7 @@ public class Login extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
                         // TODO: Check if admin or student and then send to corresponding activity
-                        startActivity(new Intent(Login.this, StudentActivity.class));
+                        startActivity(new Intent(Login.this, AdminActivity.class));
                         finish();
                     }else {
                         Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();

@@ -5,7 +5,9 @@ import java.time.format.DateTimeFormatter;
 
 public interface EventListItem {
     String getName();
+    String getDesc();
     String getStartTimeString();
+    String getEndTimeString();
     String getLocation();
 
     DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("h:mm a EEEE, MMMM d, yyyy");

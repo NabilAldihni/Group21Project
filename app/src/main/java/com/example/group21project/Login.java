@@ -87,7 +87,7 @@ public class Login extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         DocumentSnapshot document = task.getResult();
                                         if (document.exists()) {
-                                            if ((boolean) document.getData().get("admin") == true) {
+                                            if ((boolean) document.getData().get("admin")) {
                                                 startActivity(new Intent(Login.this, AdminActivity.class));
                                             } else {
                                                 startActivity(new Intent(Login.this, StudentActivity.class));
@@ -123,7 +123,7 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
-                                if ((boolean) document.getData().get("admin") == true) {
+                                if ((boolean) document.getData().get("admin")) {
                                     startActivity(new Intent(Login.this, AdminActivity.class));
                                 } else {
                                     startActivity(new Intent(Login.this, StudentActivity.class));

@@ -69,4 +69,10 @@ public class DepartmentEventFirebaseAdapter implements EventListItem {
         LocalDateTime eventStartTime = LocalDateTime.parse(startTime);
         return EventListItem.getFormattedTimeString(eventStartTime);
     }
+
+    @Override
+    public String getEndTimeString() {
+        LocalDateTime eventEndTime = LocalDateTime.parse(endTime);
+        return EventListItem.getFormattedTimeString(eventEndTime);
+    }
 }

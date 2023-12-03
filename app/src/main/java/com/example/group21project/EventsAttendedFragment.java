@@ -1,6 +1,14 @@
 package com.example.group21project;
 
+import android.app.Dialog;
+import android.util.Log;
+import android.widget.EditText;
+import android.widget.RatingBar;
+import android.widget.Toast;
+
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EventsAttendedFragment extends EventsChildFragment {
     public EventsAttendedFragment() {}
@@ -16,40 +24,65 @@ public class EventsAttendedFragment extends EventsChildFragment {
     }
 
     @Override
-    int getPopupFragmentId() {
+    public int getPopupFragmentId() {
         return R.layout.fragment_popup;
     }
 
-    @Override
-    int getPopupFragmentTextId() {
+    public int getPopupFragmentTextId() {
         return R.id.eventAttendedPopupText;
     }
 
-    @Override
-    int getPopupFragmentSubmitId() {
+    public int getPopupFragmentSubmitId() {
         return R.id.popUpSubmitButton;
     }
 
     @Override
-    void getEventListItems() {
-        eventListItems.clear();
-        eventListItems.add(new DepartmentEvent("An Attended Event", "This event was attended already.",
-                LocalDateTime.of(2023, 11, 26, 11, 0),
-                LocalDateTime.of(2023, 11, 28, 14, 30),
-                "SW 319", 135));
-        eventListItems.add(new DepartmentEvent("Hackathon", "Check this attended event out!",
-                LocalDateTime.of(2023, 11, 29, 11, 0),
-                LocalDateTime.of(2023, 11, 30, 14, 30),
-                "SW 319", 135));
-        eventListItems.add(new DepartmentEvent("What happens if the title is long-ish? Let's find out",
-                "Check this event out! It was subscribed to",
-                LocalDateTime.of(2023, 11, 29, 17, 0),
-                LocalDateTime.of(2023, 11, 29, 19, 30),
-                "HLB 101", 235));
+    public String getEventActionButtonText() {
+        return "Leave a Review";
     }
 
     @Override
-    boolean eventSatisfiesFilter(DepartmentEvent event) {
-        return LocalDateTime.now().isAfter(event.getEndTime());     // TODO: implement && user RSVP'd to the event
+    public String getPopupButtonText(DepartmentEvent event, String userId) {
+        return "Submit";
+    }
+
+    @Override
+    boolean eventSatisfiesFilter(DepartmentEvent event, String userId) {
+        return LocalDateTime.now().isAfter(event.getEndTime()) && event.userHasRsvped(userId);
+    }
+
+    @Override
+    public void eventListItemButtonOnClick(DepartmentEvent event, Dialog mDialog) {
+        RatingBar starsRating;
+        EditText reviewTextInput;
+        try {
+            starsRating = (RatingBar) mDialog.findViewById(R.id.starsRatingBarEventsAttended);
+            reviewTextInput = mDialog.findViewById(R.id.textReviewInputEventsAttended);
+
+            Log.d("STARS", "num of stars: " + starsRating.getRating());
+            if (0.5 <= starsRating.getNumStars() && starsRating.getNumStars() <= 5 && reviewTextInput.getText().toString().length() >= 1) {
+                Log.d("EDIT TEXT", "review " + reviewTextInput.getText().toString());
+                Map<String, Object> data = new HashMap<>();
+                data.put("eventName", event.getName());
+                data.put("location", event.getLocation());
+                data.put("numStars", starsRating.getNumStars());
+                data.put("reviewTextInput", reviewTextInput.getText().toString());
+                data.put("startTime", event.getStartTimeString());
+
+                database.collection("Reviews").add(data);
+
+                Toast reviewConfirmation = Toast.makeText(getContext(), "Review submitted", Toast.LENGTH_SHORT);
+                reviewConfirmation.show();
+                mDialog.hide();
+
+            }
+            else {
+                Toast invalid = Toast.makeText(getContext(), "Please enter a review", Toast.LENGTH_SHORT);
+                invalid.show();
+            }
+        }
+        catch (Exception e) {
+            Log.d("EXCEPTION", "EXCEPTION");
+        }
     }
 }

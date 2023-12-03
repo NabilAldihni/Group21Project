@@ -41,15 +41,16 @@
             android:id="@+id/textview_first"
             android:layout_width="402dp"
             android:layout_height="582dp"
-            android:layout_marginTop="168dp"
+            android:layout_marginTop="140dp"
             android:fontFamily="@font/roboto_bold"
             android:gravity="center"
-            android:text="To be eligible for out-of-stream CS POSt, you need a minimum grade of A- in your first attempt of CSC/MAT A67 and MAT A31. The computer science program has limited spots for out-of-stream students and requires competitive grades."
+            android:text="There are a limited number of spaces for students applying out-of-stream. Students will be selected based on their grades in CSC / MAT A67, CSC A48, MAT A22, MAT A37."
             android:textAlignment="gravity"
             android:textColor="@color/white"
             android:textSize="35sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/my_toolbar" />
 

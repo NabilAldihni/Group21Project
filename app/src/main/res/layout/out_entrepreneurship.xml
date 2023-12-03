@@ -44,7 +44,7 @@
             android:layout_marginTop="80dp"
             android:fontFamily="@font/roboto_bold"
             android:gravity="center"
-            android:text="Admission into this stream will only take place during the first round of POSt in April. You need to submit a supplementary application form, available on the CMS website. Out-of-stream students must also have at least an A- in CSC / MAT A67 and MAT A31."
+            android:text="Admission into this stream will only take place during the first round of POSt in April. You need to submit a supplementary application form, available on the CMS website. There are a limited number of spaces for this POSt."
             android:textAlignment="gravity"
             android:textColor="@color/white"
             android:textSize="37dp"

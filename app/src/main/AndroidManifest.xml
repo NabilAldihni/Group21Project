@@ -27,7 +27,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".StudentActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.Group21Project.NoActionBar">
+        </activity>
+        <activity
+            android:name=".AdminActivity"
             android:exported="true"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.Group21Project.NoActionBar">

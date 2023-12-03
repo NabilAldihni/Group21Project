@@ -20,4 +20,6 @@
     <string name="menu_complaints_list">Complaints</string>
     <string name="menu_post_announcement">Post an announcement</string>
     <string name="menu_announcements_list">Announcements</string>
+    <string name="events">Hi \u0026</string>
+
 </resources>

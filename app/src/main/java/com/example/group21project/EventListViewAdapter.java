@@ -1,5 +1,6 @@
 package com.example.group21project;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -54,15 +55,16 @@ public class EventListViewAdapter extends RecyclerView.Adapter<EventListViewHold
         eventButton.setText(eventsFragment.getEventActionButtonText());
 
         eventButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
                 mDialog.setContentView(eventsFragment.getPopupFragmentId());
                 // TODO: replace with multiple TextViews and icons with proper alignment
                 TextView eventInfoText = mDialog.findViewById(eventsFragment.getPopupFragmentTextId());
-                eventInfoText.setText("\n\n\n\nEvent: " + event.getName() + "\n"
-                        + "Location: " + event.getLocation() + "\n"
-                        + "Start Time: " + event.getStartTimeString() + "\n"
-                        + "End Time: " + event.getEndTimeString() + "\n\n"
+                eventInfoText.setText("\n\n\n\n\uD83C\uDFAB Event: " + event.getName() + "\n"
+                        + "\uD83D\uDCCD Location: " + event.getLocation() + "\n"
+                        + "\uD83D\uDCC5 Start Time: " + event.getStartTimeString() + "\n"
+                        + "\uD83D\uDCC5 End Time: " + event.getEndTimeString() + "\n\n"
                         + event.getDesc());
 
                 mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

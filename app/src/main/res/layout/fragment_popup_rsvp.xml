@@ -13,11 +13,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RSVP!"
-        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_marginLeft="22dp"
         android:layout_marginRight="22dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
         />
 
     <ImageView
@@ -25,31 +28,35 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp" />
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:id="@+id/eventRSVPPopupText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/rate"
-        android:textSize="24sp"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="false"
+        android:gravity="left"
         android:layout_marginLeft="22dp"
         android:layout_marginRight="22dp"
+        android:layout_marginTop="-35dp"
         />
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/popUpSubmitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="97dp"
+        android:layout_height="35dp"
+        android:background="#013A6F"
         android:text="Yes"
         android:gravity="center"
+        android:textColor="#FFFFFF"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="22dp"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="250dp"
+        />
 
 
 </RelativeLayout>

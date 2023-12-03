@@ -30,9 +30,18 @@
         <activity android:name=".SpecialistPage" />
         <activity android:name=".MajorPage" />
         <activity android:name=".MinorPage" />
+        <activity android:name=".MinorGrades" />
+        <activity android:name=".MinorCourses" />
         <activity android:name=".SWE" />
         <activity android:name=".CorrectCourses1" />
+        <activity android:name=".CorrectCoursesInfoSystems" />
+        <activity android:name=".CorrectCoursesEntrepreneurship" />
+        <activity android:name=".Entrepreneurship" />
+        <activity android:name=".InEntrepreneurship" />
+        <activity android:name=".OutEntrepreneurship" />
         <activity android:name=".IncorrectCourses" />
+        <activity android:name=".InformationSystems" />
+        <activity android:name=".InInfoSystems" />
         <activity android:name=".in_swe" />
         <activity android:name=".out_swe" />
 

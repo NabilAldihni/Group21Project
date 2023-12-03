@@ -6,13 +6,49 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background">
 
+    <include
+        android:id="@+id/my_toolbar"
+        style="@style/ToolbarStyle"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:padding="0dp"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_first"
+        android:layout_width="436dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="55dp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:text="POSt Grade Calculator"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/my_toolbar" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/A67textInputLayout"
         style="@android:style/Holo.ButtonBar.AlertDialog"
         android:layout_width="331dp"
         android:layout_height="121dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="185dp"
+        android:layout_marginTop="-10dp"
         android:layout_marginEnd="53dp"
         android:duplicateParentState="true"
         android:hint="CSC/MAT A67"
@@ -25,12 +61,12 @@
         app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textview_first">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/A67textInputEditText"
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="60dp"
             android:inputType="number"
             android:textColor="#FFFFFF"
             android:textCursorDrawable="@drawable/custom_cursor"
@@ -46,7 +82,7 @@
         android:layout_width="331dp"
         android:layout_height="121dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="-15dp"
+        android:layout_marginTop="-25dp"
         android:layout_marginEnd="53dp"
         android:duplicateParentState="true"
         android:hint="CSC A08"
@@ -64,7 +100,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/A08textInputEditText"
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="60dp"
             android:inputType="number"
             android:textColor="#FFFFFF"
             android:textCursorDrawable="@drawable/custom_cursor"
@@ -80,7 +116,7 @@
         android:layout_width="331dp"
         android:layout_height="121dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="-15dp"
+        android:layout_marginTop="-25dp"
         android:layout_marginEnd="53dp"
         android:duplicateParentState="true"
         android:hint="CSC A48"
@@ -98,7 +134,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/A48textInputEditText"
             android:layout_width="match_parent"
-            android:layout_height="67dp"
+            android:layout_height="60dp"
             android:inputType="number"
             android:textColor="#FFFFFF"
             android:textCursorDrawable="@drawable/custom_cursor"
@@ -114,7 +150,7 @@
         android:layout_width="331dp"
         android:layout_height="121dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="-15dp"
+        android:layout_marginTop="-25dp"
         android:layout_marginEnd="53dp"
         android:duplicateParentState="true"
         android:hint="MAT A22"
@@ -132,7 +168,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/A22textInputEditText"
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="60dp"
             android:inputType="number"
             android:textColor="#FFFFFF"
             android:textCursorDrawable="@drawable/custom_cursor"
@@ -166,7 +202,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/A31textInputEditText"
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="60dp"
             android:inputType="number"
             android:textColor="#FFFFFF"
             android:textCursorDrawable="@drawable/custom_cursor"
@@ -182,7 +218,7 @@
         android:layout_width="331dp"
         android:layout_height="121dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="-10dp"
+        android:layout_marginTop="-25dp"
         android:layout_marginEnd="53dp"
         android:duplicateParentState="true"
         android:hint="MAT A37"
@@ -200,7 +236,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/A37textInputEditText"
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="60dp"
             android:inputType="number"
             android:textColor="#FFFFFF"
             android:textCursorDrawable="@drawable/custom_cursor"
@@ -208,7 +244,25 @@
             app:boxStrokeColor="@color/selector"
             app:boxStrokeWidth="4dp"
             app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse" />
+
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/gradesButton"
+        android:layout_width="328dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="-25dp"
+        android:layout_marginBottom="45dp"
+        android:backgroundTint="#013A6F"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Calculate Grades"
+        android:textSize="33sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/A37textInputLayout"
+        app:layout_constraintVertical_bias="0.074" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

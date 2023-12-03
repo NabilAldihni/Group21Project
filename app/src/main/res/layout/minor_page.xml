@@ -117,7 +117,7 @@
             android:paddingTop="0dp"
             android:paddingEnd="0dp"
             android:paddingRight="0dp"
-            android:text="The Minor program provides a basic introduction into the field of computer science. It can also complement other programs. If you decide to pursue a CS Minor, you will need to choose a Specialist, two Majors or one Major and another Minor in order to meet graduation requirements."
+            android:text="The Minor program provides a basic introduction into the field of computer science. It is also meant to complement other programs. If you decide to pursue a CS Minor, you will need to choose a Specialist, two Majors or one Major and another Minor to meet graduation requirements."
             android:textAlignment="center"
             android:textColor="#013A6F"
             android:textSize="35sp"

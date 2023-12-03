@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".SecondFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingRight="0dp">
+
+
+        <include
+            android:id="@+id/my_toolbar"
+            style="@style/ToolbarStyle"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:padding="0dp"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="0dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textview_first"
+            android:layout_width="393dp"
+            android:layout_height="302dp"
+            android:layout_marginTop="52dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="You have all the right courses for this POSt! Select your admission category below:"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/my_toolbar" />
+
+        <TextView
+            android:id="@+id/textview_second"
+            android:layout_width="378dp"
+            android:layout_height="185dp"
+            android:layout_marginTop="-18dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:paddingRight="5dp"
+
+            android:text="‣ In-stream student: Admitted into a CS specialist/major from high school"
+            android:textAlignment="viewStart"
+            android:textColor="#3BFF7C"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_first" />
+
+        <TextView
+            android:id="@+id/textview_second3"
+            android:layout_width="378dp"
+            android:layout_height="190dp"
+            android:layout_marginTop="-15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+
+            android:paddingRight="5dp"
+            android:text="‣ Out-of-stream student: Admitted into a math/stats program from high school"
+            android:textAlignment="viewStart"
+            android:textColor="#3BFF7C"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_second" />
+
+        <Button
+            android:id="@+id/in"
+            android:layout_width="160dp"
+            android:layout_height="79dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#013A6F"
+            android:fontFamily="@font/roboto_bold"
+            android:text="In"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_second3" />
+
+        <Button
+            android:id="@+id/out"
+            android:layout_width="160dp"
+            android:layout_height="79dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#013A6F"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Out"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.824"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_second3" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

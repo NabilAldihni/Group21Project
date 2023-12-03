@@ -42,7 +42,7 @@
         <item name="colorPrimary">#FFFFFF</item>
         <item name="android:textStyle">bold</item> <!-- Set your desired text style -->
         <item name="android:fontFamily">@font/roboto_bold</item>
-        <item name="android:textSize">34dp</item>
+        <item name="android:textSize">28dp</item>
 
     </style>
 
@@ -50,9 +50,30 @@
         <item name="android:textColor">#FF0000</item> <!-- Set your desired text color -->
         <item name="android:textStyle">bold</item> <!-- Set your desired text style -->
         <item name="android:fontFamily">@font/roboto_bold</item>
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">16dp</item>
         <!-- You can add more styling attributes as needed -->
     </style>
+
+    <style name="passtoast">
+        <item name="stTextColor">#FFFF</item>
+        <item name="stColorBackground">#11CA4E</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stFont">@font/roboto_bold</item>
+        <item name="stTextSize">20sp</item>
+        <item name="stLength">LONG</item> LONG or SHORT
+        <item name="stGravity">center</item> top or center
+</style>
+
+    <style name="failtoast">
+        <item name="stTextColor">#FFFF</item>
+        <item name="stColorBackground">#FF0000</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stFont">@font/roboto_bold</item>
+        <item name="stTextSize">20sp</item>
+        <item name="stLength">LONG</item> LONG or SHORT
+        <item name="stGravity">center</item> top or center
+    </style>
+
 
 
 

@@ -90,6 +90,8 @@ public class AddEventFragment extends Fragment {
                                 public void onSuccess(DocumentReference documentReference) {
                                     snackbar.setText("The event has been created");
                                     snackbar.show();
+                                    Util util = new Util();
+                                    util.sendFCMNotification("New Event", eventName);
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {

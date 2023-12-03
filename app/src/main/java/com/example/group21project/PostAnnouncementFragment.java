@@ -44,9 +44,17 @@ public class PostAnnouncementFragment extends Fragment {
             public void onClick(View v) {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+                String title = titleInput.getText().toString().trim();
+                String description = descriptionInput.getText().toString().trim();
+
+                if (title.isEmpty() || description.isEmpty()) {
+                    Snackbar.make(v, "Title and description cannot be empty", Snackbar.LENGTH_LONG).show();
+                    return; // Prevents the code from proceeding further
+                }
+
                 Map<String, Object> announcement = new HashMap<>();
-                announcement.put("title", titleInput.getText().toString());
-                announcement.put("description", descriptionInput.getText().toString());
+                announcement.put("title", title);
+                announcement.put("description", description);
 
                 db.collection("Announcements")
                         .add(announcement)

@@ -3,7 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_submit_complaints">
+    app:startDestination="@+id/nav_announcements_list">
+
+    <fragment
+        android:id="@+id/nav_announcements_list"
+        android:name="com.example.group21project.AnnouncementsListFragment"
+        android:label="@string/menu_announcements_list"
+        tools:layout="@layout/fragment_announcements_list" />
 
     <fragment
         android:id="@+id/nav_submit_complaints"

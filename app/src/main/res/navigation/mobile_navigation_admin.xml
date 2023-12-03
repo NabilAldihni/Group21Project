@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/nav_complaints_list"
-        android:name="com.example.group21project.ComplaintsList"
+        android:name="com.example.group21project.ComplaintsListFragment"
         android:label="@string/menu_complaints_list"
         tools:layout="@layout/fragment_add_event" />
 </navigation>

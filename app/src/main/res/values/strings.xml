@@ -60,4 +60,5 @@
     <string name="menu_add_event">Add Event</string>
     <string name="menu_complaints_list">Complaints</string>
     <string name="menu_post_announcement">Post an announcement</string>
+    <string name="menu_announcements_list">Announcements</string>
 </resources>

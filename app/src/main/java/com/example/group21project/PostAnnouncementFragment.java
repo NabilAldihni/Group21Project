@@ -1,0 +1,100 @@
+package com.example.group21project;
+
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class PostAnnouncementFragment extends Fragment {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_post_announcement, container, false);
+
+        Button postAnnouncementBtn = (Button) view.findViewById(R.id.postAnnouncementBtn);
+        TextInputEditText titleInput = (TextInputEditText) view.findViewById(R.id.announcementTitleTextInput);
+        TextInputEditText descriptionInput = (TextInputEditText) view.findViewById(R.id.announcementDescriptionTextInput);
+
+        postAnnouncementBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                String title = titleInput.getText().toString().trim();
+                String description = descriptionInput.getText().toString().trim();
+
+                if (title.isEmpty() || description.isEmpty()) {
+                    Snackbar.make(v, "Title and description cannot be empty", Snackbar.LENGTH_LONG).show();
+                    return; // Prevents the code from proceeding further
+                }
+
+                Map<String, Object> announcement = new HashMap<>();
+                announcement.put("title", title);
+                announcement.put("description", description);
+
+                db.collection("Announcements")
+                        .add(announcement)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+
+                                // Send a notification
+                                Util util = new Util();
+                                util.sendFCMNotification(titleInput.getText().toString(), descriptionInput.getText().toString());
+
+                                titleInput.getText().clear();
+                                descriptionInput.getText().clear();
+
+                                Snackbar snackbar = Snackbar.make(v, "Your announcement has been posted", Snackbar.LENGTH_LONG);
+                                snackbar.setAction("Dismiss", new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        snackbar.dismiss();
+                                    }
+                                });
+                                snackbar.show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Snackbar snackbar = Snackbar.make(v, "Something went wrong, please try again", Snackbar.LENGTH_LONG);
+                                snackbar.setAction("Dismiss", new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        snackbar.dismiss();
+                                    }
+                                });
+                                snackbar.show();
+                            }
+                        });
+            }
+        });
+
+        return view;
+    }
+}

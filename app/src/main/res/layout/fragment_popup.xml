@@ -13,6 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Leave a review!"
+        android:layout_marginTop="10dp"
+        android:typeface="serif"
         android:textSize="24sp"
         android:layout_centerHorizontal="true"
         android:gravity="center"
@@ -32,22 +34,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/rate"
-        android:textSize="24sp"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
+        android:textSize="17sp"
+        android:layout_centerHorizontal="false"
+        android:gravity="left"
         android:layout_marginLeft="22dp"
         android:layout_marginTop="100dp"
+        android:layout_marginBottom="25dp"
         android:layout_marginRight="22dp"
         />
 
     <RatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/starsRatingBarEventsAttended"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_marginLeft="22dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="40dp"
+        android:rating="2.5"
         android:layout_marginRight="22dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -56,25 +60,25 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_marginLeft="22dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="95dp"
         android:layout_marginRight="22dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/textReviewInputEventsAttended"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
             android:hint="Review" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/popUpSubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="165dp"
-        android:layout_marginRight="22dp"/>
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="288dp"
+        android:layout_marginEnd="108dp"
+        android:text="Submit" />
 
 
 </RelativeLayout>

@@ -1,17 +1,15 @@
 <resources>
     <string name="app_name">Group 21 Project</string>
     <string name="title_activity_main">MainActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
     <string name="event_bottom_nav_upcoming">Upcoming</string>
     <string name="event_bottom_nav_subscribed">My Events</string>
     <string name="event_bottom_nav_attended">Attended</string>
 
-    <string name="rate">Rate</string>
+    <string name="rate">Leave a Review</string>
+
+    <string name="channel_name">Event Notifications</string>
+    <string name="channel_description">Receive updates on new events</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
@@ -58,4 +56,9 @@
     <string name="menu_submit_complaints">Submit a complaint</string>
     <string name="menu_events">Events</string>
     <string name="menu_add_event">Add Event</string>
+    <string name="menu_complaints_list">Complaints</string>
+    <string name="menu_post_announcement">Post an announcement</string>
+    <string name="menu_announcements_list">Announcements</string>
+    <string name="events">Hi \u0026</string>
+
 </resources>

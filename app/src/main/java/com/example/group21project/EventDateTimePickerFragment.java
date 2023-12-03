@@ -69,6 +69,7 @@ public class EventDateTimePickerFragment extends Fragment {
                 },
                 today.getYear(), today.getMonthValue() - 1, today.getDayOfMonth());
 
+        // TODO: previous date/time are still visible (overlapping); maybe the fragment isn't replaced properly
         datePickerDialog.updateDate(today.getYear(), today.getMonthValue() - 1, today.getDayOfMonth());
         datePickerDialog.show();
     }

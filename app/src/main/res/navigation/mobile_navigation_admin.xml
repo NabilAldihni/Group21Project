@@ -3,7 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_add_event">
+    app:startDestination="@+id/nav_post_announcement">
+
+    <fragment
+        android:id="@+id/nav_post_announcement"
+        android:name="com.example.group21project.PostAnnouncementFragment"
+        android:label="@string/menu_post_announcement"
+        tools:layout="@layout/fragment_post_announcement" />
 
     <fragment
         android:id="@+id/nav_add_event"
@@ -11,4 +17,9 @@
         android:label="@string/menu_add_event"
         tools:layout="@layout/fragment_add_event" />
 
+    <fragment
+        android:id="@+id/nav_complaints_list"
+        android:name="com.example.group21project.ComplaintsListFragment"
+        android:label="@string/menu_complaints_list"
+        tools:layout="@layout/fragment_add_event" />
 </navigation>

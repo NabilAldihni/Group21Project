@@ -26,6 +26,11 @@ public class EventsAttendedFragment extends EventsChildFragment {
     }
 
     @Override
+    int getPopupFragmentSubmitId() {
+        return R.id.popUpSubmitButton;
+    }
+
+    @Override
     void getEventListItems() {
         eventListItems.clear();
         eventListItems.add(new DepartmentEvent("An Attended Event", "This event was attended already.",

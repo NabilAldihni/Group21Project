@@ -12,7 +12,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RSVP!"
+        android:text="More Info"
         android:textSize="24sp"
         android:layout_centerHorizontal="true"
         android:gravity="center"
@@ -25,10 +25,10 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp" />
+         />
 
     <TextView
-        android:id="@+id/eventRSVPPopupText"
+        android:id="@+id/eventAttendedPopupText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/rate"
@@ -39,17 +39,6 @@
         android:layout_marginRight="22dp"
         />
 
-
-    <Button
-        android:id="@+id/popUpSubmitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Yes"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="22dp"/>
 
 
 </RelativeLayout>

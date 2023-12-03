@@ -15,21 +15,25 @@ public class EventListViewAdapter extends RecyclerView.Adapter<EventListViewHold
     private final List<EventListItem> eventListItems;
     private final int popupFragmentId;
     private final int popupFragmentTextId;
+    private final int popupFragmentSubmitId;
+
 
 
     public EventListViewAdapter(Context eventListContext, List<EventListItem> eventListItems, int popupFragmentId,
-                                int popupFragmentTextId) {
+                                int popupFragmentTextId, int popupFragmentSubmitId) {
         this.eventListContext = eventListContext;
         this.eventListItems = eventListItems;
         this.popupFragmentId = popupFragmentId;
         this.popupFragmentTextId = popupFragmentTextId;
+        this.popupFragmentSubmitId = popupFragmentSubmitId;
+
     }
 
     @NonNull
     @Override
     public EventListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(eventListContext).inflate(R.layout.event_list_item, parent, false);
-        return new EventListViewHolder(view, popupFragmentId, popupFragmentTextId);
+        return new EventListViewHolder(view, popupFragmentId, popupFragmentTextId, popupFragmentSubmitId);
     }
 
     @Override

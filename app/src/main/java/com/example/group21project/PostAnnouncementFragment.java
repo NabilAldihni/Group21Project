@@ -61,8 +61,14 @@ public class PostAnnouncementFragment extends Fragment {
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
+
+                                // Send a notification
+                                Util util = new Util();
+                                util.sendFCMNotification(titleInput.getText().toString(), descriptionInput.getText().toString());
+
                                 titleInput.getText().clear();
                                 descriptionInput.getText().clear();
+
                                 Snackbar snackbar = Snackbar.make(v, "Your announcement has been posted", Snackbar.LENGTH_LONG);
                                 snackbar.setAction("Dismiss", new View.OnClickListener() {
                                     @Override

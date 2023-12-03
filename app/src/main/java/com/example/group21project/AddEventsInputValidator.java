@@ -11,9 +11,7 @@ public class AddEventsInputValidator {
             return false;
         else if (stringIsBlank(eventLocation))
             return false;
-        else if (!stringIsNumeric(eventCapacity))
-            return false;
-        return true;
+        else return stringIsNumeric(eventCapacity);
     }
 
     private static boolean stringIsBlank(String string) {

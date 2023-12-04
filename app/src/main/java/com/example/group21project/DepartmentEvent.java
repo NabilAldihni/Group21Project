@@ -1,5 +1,8 @@
 package com.example.group21project;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +14,11 @@ public class DepartmentEvent implements EventListItem {
     private final LocalDateTime endTime;
     private final String location;
     private final int capacity;
-    // TODO: maybe separate attending with a different interface or at least don't modify the ArrayList directly
     private final ArrayList<String> attending;
+    private final ArrayList<String> reviewIds;
 
     public DepartmentEvent(String name, String desc, LocalDateTime startTime, LocalDateTime endTime, String location,
-                           int capacity, ArrayList<String> attending) {
+                           int capacity, ArrayList<String> attending, ArrayList<String> reviewIds) {
         if (capacity < 0)
             throw new IllegalArgumentException("Event capacity must be non-negative");
         else if (startTime.isAfter(endTime))
@@ -27,11 +30,12 @@ public class DepartmentEvent implements EventListItem {
         this.location = location;
         this.capacity = capacity;
         this.attending = attending;
+        this.reviewIds = reviewIds;
     }
 
     public DepartmentEvent(String name, String desc, LocalDateTime startTime, LocalDateTime endTime, String location,
                            int capacity) {
-        this(name, desc, startTime, endTime, location, capacity, new ArrayList<>());
+        this(name, desc, startTime, endTime, location, capacity, new ArrayList<>(), new ArrayList<>());
     }
 
     public String getName() {
@@ -54,10 +58,6 @@ public class DepartmentEvent implements EventListItem {
         return location;
     }
 
-    public int getCapacity() {
-        return capacity;
-    }
-
     public List<String> getAttending() {
         return attending;
     }
@@ -70,6 +70,14 @@ public class DepartmentEvent implements EventListItem {
     @Override
     public String getEndTimeString() {
         return EventListItem.getFormattedTimeString(endTime);
+    }
+
+    public ArrayList<String> getReviewIds() {
+        return reviewIds;
+    }
+
+    public boolean hasReview(String reviewId) {
+        return reviewIds.contains(reviewId);
     }
 
     public boolean userHasRsvped(String userId) {
@@ -86,5 +94,20 @@ public class DepartmentEvent implements EventListItem {
 
     public void unRsvpUser(String userId) {
         attending.remove(userId);
+    }
+
+    public void addReview(String reviewId) {
+        reviewIds.add(reviewId);
+    }
+
+    public Query getDocumentQuery(FirebaseFirestore database) {
+        return database.collection("Events")
+                .whereEqualTo("capacity", capacity)
+                .whereEqualTo("location", location)
+                .whereEqualTo("name", name)
+                .whereEqualTo("startTime", startTime.toString())
+                .whereEqualTo("endTime", endTime.toString())
+                .whereEqualTo("desc", desc)
+                .limit(1);
     }
 }

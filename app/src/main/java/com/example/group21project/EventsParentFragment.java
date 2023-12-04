@@ -13,7 +13,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class EventsParentFragment extends Fragment implements NavigationBarView.OnItemSelectedListener {
-    // TODO: initialize these inside onCreate
     private final EventsUpcomingFragment upcomingEventsFrag = new EventsUpcomingFragment();
     private final EventsSubscribedFragment subscribedEventsFrag = new EventsSubscribedFragment();
     private final EventsAttendedFragment attendedEventsFrag = new EventsAttendedFragment();

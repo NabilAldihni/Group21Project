@@ -1,0 +1,80 @@
+09/11/2023
+ - We introduced ourselves to the team and Nabil prepared the jira and github repositories
+
+12/11/2023
+ - We chose a scrum master (Nabil) and assigned the user stories to everyone. We only assigned
+   student user stories for the sprint, deciding to work on the admin stories the next sprint
+
+13/11/2023
+ - We assigned some more administrative tasks and Mani set up the firebase project, linking it with
+   our repository
+
+14/11/2023
+ - Everyone cloned the repository and made sure that it was working on their machines and with
+   their emulators
+ - Ali created a detailed flow for how the app would work on LucidChart, as well as UML diagrams
+   for the necessary classes for all the user stories
+ - Nabil created a drawn out draft of the UI for all the student related stories, and the navigation
+   between them
+
+16/11/2023
+ - Mani created a generic user class so the rest of the team could start working on our stories
+   while he implemented the final authentication
+
+20/11/2023
+ - Shakeel started designing the flow of the PoST survey story
+
+21/11/2023
+ - Nabil created a Figma with the stories relating to students and shared it with the rest of the
+   team
+
+22/11/2023
+ - Ali shared updates on the events screen. He created a bottom navigation bar for filtering
+   between the different types of events
+ - Nabil finished and shared the submitting complaints screen
+ - Shakeel started coding the PoST survey screens
+ - Mani finished login and signup functionality, kept working on the UI
+
+26/11/2023
+ - Ali managed to display events in a list
+
+27/11/2023
+ - Shakeel kept working on the PoST requirements survey, advancing a couple more screens
+ - Nabil fixed up and modified Mani's design of the login and signup screens, finalising it
+ - Mani fixed some issues with authentication and the id being generated
+ - Nabil started working on creating a navigation drawer and merging existing changes with it
+
+28/11/2023
+ - Ali started working on the first admin story, to create events
+ - Alykhan worked on the review popup for leaving ratings on events
+ - Ali and Alykhan merged their parts together
+ - Nabil finished the navigation drawer and merged it with develop
+
+29/11/2023
+ - Ali and Alykhan kept working together to merge their related stories
+ - Nabil modified the signup and login pages to allow signing up as an admin and logging in as one
+
+30/11/2023
+ - Shakeel kept working on the PoST requirements survey
+ - Ali connected the events functionality with firebase
+
+02/12/2023
+ - Ali merged his changes, he had to refactor all his code so that it worked with the navigation
+   drawer. Also kept working with Alykhan's code to finalise the events stories
+ - Nabil separated the activities for admins and students, creating a different navigation drawer
+   for each type of user. Also added functionality so that your login details are saved and you
+   don't have to log in every time. Also created the complaints screen, finishing one of the admin
+   stories. Also finished the announcements story for admins, allowing them to post announcements
+   and allowing students to see a list of announcements
+ - Shakeel kept working on the PoST survey requirements
+ - Mani worked on and finished the user story for notifications, merging it with the others' changes
+   so a notification is sent on event and announcement creation
+
+03/12/2023
+ - Shakeel finished the PoST requirements survey
+ - Nabil worked with Mani to refactor the login screen according to MVP
+ - Ali finished the user story that lets admins see events and a summary of their reviews
+
+04/12/2023
+ - Prithvi worked on the notifications story
+

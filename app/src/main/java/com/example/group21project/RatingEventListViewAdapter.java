@@ -64,7 +64,12 @@ public class RatingEventListViewAdapter extends RecyclerView.Adapter<RatingEvent
             public void onClick(View view) {
                 mDialog.setContentView(R.layout.fragment_review_list_popup);
                 TextView eventNameView = mDialog.findViewById(R.id.reviewPopupEventName);
+                TextView reviewCountView = mDialog.findViewById(R.id.reviewPopupCountText);
+                TextView reviewAverageView = mDialog.findViewById(R.id.reviewPopupAverageText);
+
                 eventNameView.setText(eventListItem.getName());
+                reviewCountView.setText("Number of reviews: 0");
+                reviewAverageView.setText("Average rating: 0.0 / 5.0");
                 mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 WindowManager.LayoutParams dialogLayoutParams = new WindowManager.LayoutParams();
                 dialogLayoutParams.copyFrom(mDialog.getWindow().getAttributes());
@@ -75,7 +80,6 @@ public class RatingEventListViewAdapter extends RecyclerView.Adapter<RatingEvent
                 RecyclerView reviewListView = mDialog.findViewById(R.id.reviewListView);
                 reviewListView.setLayoutManager(new LinearLayoutManager(mDialog.getContext()));
 
-                // TODO: firebase retrieval
                 List<DepartmentEventReview> reviews = new ArrayList<>();
                 eventListItem.getDocumentQuery(database).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -108,6 +112,8 @@ public class RatingEventListViewAdapter extends RecyclerView.Adapter<RatingEvent
                                                 reviews.add(ratingSnap.toObject(DepartmentEventReview.class));
                                         }
 
+                                        reviewCountView.setText("Number of reviews: " + reviews.size());
+                                        reviewAverageView.setText("Average rating: " + computeAverage(reviews) + " / 5.0");
                                         reviewListAdapter.notifyDataSetChanged();
                                     }
                         });
@@ -124,5 +130,16 @@ public class RatingEventListViewAdapter extends RecyclerView.Adapter<RatingEvent
     @Override
     public int getItemCount() {
         return eventListItems.size();
+    }
+
+    private double computeAverage(List<DepartmentEventReview> reviews) {
+        int numReviews = reviews.size();
+        if (numReviews == 0)
+            return 0;
+
+        double sum = 0;
+        for (DepartmentEventReview review : reviews)
+            sum += review.getRating();
+        return sum / numReviews;
     }
 }

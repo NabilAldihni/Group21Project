@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name = "android.permission.POST_NOTIFICATIONS" />
+
     <application
+        android:name=".PushNotificationService"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -25,6 +28,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".EventsActivity" />
+
+        <service android:name=".PushNotificationService" android:exported="false">
+            <intent-filter>
+                <action android:name = "com.google.firebase.MESSAGING_EVENT"></action>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

@@ -47,4 +47,9 @@ public class EventsAttendedFragment extends EventsFragment {
     boolean eventSatisfiesFilter(DepartmentEvent event) {
         return LocalDateTime.now().isAfter(event.getEndTime());     // TODO: implement && user RSVP'd to the event
     }
+
+
+
+
 }
+

@@ -7,11 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="$USER_HOME$/.android/avd/Pixel_6_API_34.avd" />
+            <value value="C:\Users\torna\.android\avd\Pixel_6_API_34.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2023-11-27T20:52:45.952814Z" />
+    <timeTargetWasSelectedWithDropDown value="2023-12-02T19:45:53.006874600Z" />
   </component>
 </project>

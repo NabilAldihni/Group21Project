@@ -1,5 +1,8 @@
 package com.example.group21project;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -28,7 +32,15 @@ public class AddEventsActivity extends AppCompatActivity {
     private Button addEventButton;
 
     private FirebaseFirestore database;
-
+    private void showNotification(String a, String b, String c) {
+        Notification notification = new NotificationCompat.Builder(getApplicationContext(), "channel_id")
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setContentTitle(a)
+                .setContentText("At " + b + " from " + c)
+                .build();
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(1, notification);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +101,7 @@ public class AddEventsActivity extends AppCompatActivity {
                                 public void onSuccess(DocumentReference documentReference) {
                                     snackbar.setText("The event has been created");
                                     snackbar.show();
+                                    showNotification(eventName, location, EventListItem.getFormattedTimeString(startTime));
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {

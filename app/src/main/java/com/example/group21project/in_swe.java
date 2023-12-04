@@ -128,7 +128,7 @@ public class in_swe extends AppCompatActivity {
             if (sum / 5.0 >= 2.5 && gpaValues[2] >= 3.0 && ((gpaValues[0] >= 1.7 && gpaValues[3] >= 1.7) || (gpaValues[0] >= 1.7 && gpaValues[5] >= 1.7) || (gpaValues[3] >= 1.7 && gpaValues[5] >= 1.7)) && pass == true) {
                 StyleableToast.makeText(in_swe.this, "You have met the requirements for this POSt!", Toast.LENGTH_LONG, R.style.passtoast).show();
             } else if (sum / 5.0 < 2.5) {
-                StyleableToast.makeText(in_swe.this, "Unfortunately, you do not qualify for this POSt. Your grades across the courses is not greater than 2.5.", Toast.LENGTH_SHORT, R.style.failtoast).show();
+                StyleableToast.makeText(in_swe.this, "Unfortunately, you do not qualify for this POSt. Your GPA for these courses (excluding A08) must be greater than 2.5.", Toast.LENGTH_SHORT, R.style.failtoast).show();
             } else if (gpaValues[2] < 3.0) {
                 StyleableToast.makeText(in_swe.this, "You must have a grade of at least 73 in CSC A48", Toast.LENGTH_SHORT, R.style.failtoast).show();
             } else if (((gpaValues[0] < 1.7 && gpaValues[3] < 1.7) || (gpaValues[0] < 1.7 && gpaValues[5] < 1.7) || (gpaValues[3] < 1.7 && gpaValues[5] < 1.7))) {

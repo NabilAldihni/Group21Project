@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         TextView mTitle = toolbar.findViewById(R.id.toolbar_title);
 
-        setSupportActionBar(toolbar);
         mTitle.setText(toolbar.getTitle());
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);

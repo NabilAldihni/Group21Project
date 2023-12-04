@@ -22,11 +22,13 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-public class Login extends AppCompatActivity {
+public class Login extends AppCompatActivity implements LoginView{
 
     private EditText editTextEmail, editTextPassword;
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
+
+    private LoginPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,95 +47,38 @@ public class Login extends AppCompatActivity {
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(false);
 
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                loginUser();
-            }
-        });
+        presenter = new LoginPresenter(this, new LoginModel());
 
-        signupLink.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //Navigate to SignUp Activity
-                startActivity(new Intent(Login.this, Signup.class));
-                finish();
-            }
-        });
+        buttonLogin.setOnClickListener(v -> presenter.onLoginClicked(
+                editTextEmail.getText().toString().trim(),
+                editTextPassword.getText().toString().trim()));
+        signupLink.setOnClickListener(v -> startActivity(new Intent(Login.this, Signup.class)));
+
     }
 
-    private void loginUser() {
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
-
-
-        // Validate inputs
-        if(email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(Login.this, "Please enter email and password", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        if (user != null) {
-                            String userId = user.getUid();
-
-                            DocumentReference docRef = FirebaseFirestore.getInstance().collection("Users").document(userId);
-
-                            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                    if (task.isSuccessful()) {
-                                        DocumentSnapshot document = task.getResult();
-                                        if (document.exists()) {
-                                            if ((boolean) document.getData().get("admin")) {
-                                                startActivity(new Intent(Login.this, AdminActivity.class));
-                                            } else {
-                                                startActivity(new Intent(Login.this, StudentActivity.class));
-                                            }
-                                            finish();
-                                        }
-                                    }
-                                }
-                            });
-                        }
-                    }else {
-                        Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-                    }
-        });
-    }
     @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            progressDialog.show();
-            //User is already signed in
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            if (user != null) {
-                String userId = user.getUid();
+    public void showProgress() {
+        progressDialog.show();
+    }
 
-                DocumentReference docRef = FirebaseFirestore.getInstance().collection("Users").document(userId);
+    @Override
+    public void hideProgress() {
+        progressDialog.dismiss();
+    }
 
-                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        progressDialog.dismiss();
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                if ((boolean) document.getData().get("admin")) {
-                                    startActivity(new Intent(Login.this, AdminActivity.class));
-                                } else {
-                                    startActivity(new Intent(Login.this, StudentActivity.class));
-                                }
-                                finish();
-                            }
-                        }
-                    }
-                });
-            }
-        }
+    @Override
+    public void navigateToAdmin() {
+        startActivity(new Intent(Login.this, AdminActivity.class));
+    }
+
+    @Override
+    public void navigateToStudent() {
+        startActivity(new Intent(Login.this, StudentActivity.class));
+        finish();
+    }
+
+    @Override
+    public void showAuthenticationFailed(String text) {
+        Toast.makeText(Login.this, text, Toast.LENGTH_SHORT).show();
     }
 }

@@ -14,10 +14,11 @@
     <string name="nav_header_subtitle">Student Portal</string>
     <string name="nav_header_desc">Navigation header</string>
 
-    <string name="menu_submit_complaints">Submit a complaint</string>
+    <string name="menu_submit_complaints">Submit a Complaint</string>
     <string name="menu_events">Events</string>
     <string name="menu_add_event">Add Event</string>
     <string name="menu_complaints_list">Complaints</string>
     <string name="menu_post_announcement">Post an announcement</string>
     <string name="menu_announcements_list">Announcements</string>
+    <string name="menu_view_feedback">View Event Feedback</string>
 </resources>

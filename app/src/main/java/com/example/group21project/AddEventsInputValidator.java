@@ -14,7 +14,7 @@ public class AddEventsInputValidator {
         else return stringIsNumeric(eventCapacity);
     }
 
-    private static boolean stringIsBlank(String string) {
+    public static boolean stringIsBlank(String string) {
         return string.trim().isEmpty();
     }
 

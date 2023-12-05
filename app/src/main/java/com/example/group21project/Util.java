@@ -5,7 +5,9 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.util.DisplayMetrics;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,7 +16,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -207,40 +211,5 @@ public class Util {
     }
 
     // Method to check internet connectivity
-    public static boolean isInternetConnected(Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-        return netInfo != null && netInfo.isConnectedOrConnecting();
-    }
 
-    // Method to format currency
-    public static String formatCurrency(double amount) {
-        NumberFormat format = NumberFormat.getCurrencyInstance(Locale.getDefault());
-        return format.format(amount);
-    }
-
-    // Method to get color from resources
-    public static int getColorFromResources(Context context, int resId) {
-        return ContextCompat.getColor(context, resId);
-    }
-
-    // Method to read file from assets
-    public static String readFileFromAssets(Context context, String fileName) throws IOException {
-        InputStream is = context.getAssets().open(fileName);
-        int size = is.available();
-        byte[] buffer = new byte[size];
-        is.read(buffer);
-        is.close();
-        return new String(buffer, "UTF-8");
-    }
-
-    // Method to show a toast message
-    public static void showToast(Context context, String message) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-    }
-
-    // Method for standardized logging
-    public static void logMessage(String tag, String message) {
-        Log.d(tag, message);
-    }
 }

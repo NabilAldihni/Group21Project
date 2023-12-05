@@ -22,4 +22,19 @@
         android:name="com.example.group21project.EventsParentFragment"
         android:label="@string/menu_events"
         tools:layout="@layout/fragment_events" />
+
+
+    <fragment
+        android:id="@+id/nav_add_event"
+        android:name="com.example.group21project.AddEventFragment"
+        android:label="@string/menu_add_event"
+        tools:layout="@layout/fragment_add_event" />
+
+    <fragment
+        android:id="@+id/nav_post_questionnaire"
+        android:name="com.example.group21project.PostQuestionaire"
+        android:label="@string/menu_post_questionnaire"
+        tools:layout="@layout/fragment_post_questionaire" />
+
+
 </navigation>

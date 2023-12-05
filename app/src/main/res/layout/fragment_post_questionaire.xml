@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/AdmissionCat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Are you in the computer science admission category?"
+            android:textSize="18sp"
+            android:layout_marginBottom="20dp"/>
+
+        <RadioGroup
+            android:id="@+id/admissionCatOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/yesOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="yes" />
+
+            <RadioButton
+                android:id="@+id/noOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="no" />
+        </RadioGroup>
+        <!-- Question Text -->
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do you want to pursue a UTSC Computer Science Specialist, Major, or Minor?"
+            android:textSize="18sp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Radio Group for Options -->
+        <RadioGroup
+            android:id="@+id/programOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/specialistMajorOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Specialist/Major" />
+
+            <RadioButton
+                android:id="@+id/minorOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Minor" />
+        </RadioGroup>
+        <!-- Answer Input -->
+        <EditText
+            android:id="@+id/A67"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="your MATA31 GPA"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/A31"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="your MATA67 GPA"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/A37"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="your MATA37 GPA"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/A48"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="your CSCA48 GPA"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/A22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="your MATA22 GPA"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/A08"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:hint="your CSCA08 GPA"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/Credits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="How many credits have you completed"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"/>
+
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/resultsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*your result will appear here*"
+            android:textSize="18sp"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+</ScrollView>

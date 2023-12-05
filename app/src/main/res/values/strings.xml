@@ -60,5 +60,8 @@
     <string name="menu_post_announcement">Post an announcement</string>
     <string name="menu_announcements_list">Announcements</string>
     <string name="events">Hi \u0026</string>
+    <string name="menu_post_questionnaire">post questionnaire</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

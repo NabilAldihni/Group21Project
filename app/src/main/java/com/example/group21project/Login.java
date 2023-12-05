@@ -49,9 +49,7 @@ public class Login extends AppCompatActivity implements LoginView{
 
         presenter = new LoginPresenter(this, new LoginModel());
 
-        buttonLogin.setOnClickListener(v -> presenter.onLoginClicked(
-                editTextEmail.getText().toString().trim(),
-                editTextPassword.getText().toString().trim()));
+        buttonLogin.setOnClickListener(v -> presenter.onLoginClicked());
         signupLink.setOnClickListener(v -> startActivity(new Intent(Login.this, Signup.class)));
 
     }
@@ -80,5 +78,15 @@ public class Login extends AppCompatActivity implements LoginView{
     @Override
     public void showAuthenticationFailed(String text) {
         Toast.makeText(Login.this, text, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public String getEmail() {
+        return editTextEmail.getText().toString().trim();
+    }
+
+    @Override
+    public String getPassword() {
+        return editTextPassword.getText().toString().trim();
     }
 }

@@ -5,7 +5,9 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.util.DisplayMetrics;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,7 +16,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -242,5 +246,61 @@ public class Util {
     // Method for standardized logging
     public static void logMessage(String tag, String message) {
         Log.d(tag, message);
+    }
+
+    // Method to open a web page for POSt requirements
+    public static void openPostRequirementsWebPage(Context context, String url) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        context.startActivity(browserIntent);
+    }
+
+    // Method to send an email (e.g., for submitting complaints)
+    public static void sendEmail(Context context, String[] recipients, String subject, String body) {
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, recipients);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, body);
+        if (emailIntent.resolveActivity(context.getPackageManager()) != null) {
+            context.startActivity(emailIntent);
+        }
+    }
+
+    // Method to schedule a notification for an event
+    public static void scheduleEventNotification(Context context, String title, String content, long when) {
+        // This method would interact with AlarmManager to schedule a notification.
+        // You would need to implement a BroadcastReceiver to handle the broadcast
+        // and trigger the notification at the scheduled time.
+    }
+
+    // Method to collect and store event feedback
+    public static void storeEventFeedback(Context context, String eventId, String comment, int rating) {
+        // This method would store the feedback in a local database or send it to a server.
+        // The specifics would depend on how you manage data persistence.
+    }
+
+    // Method to calculate the average of numeric ratings
+    public static double calculateAverageRating(List<Integer> ratings) {
+        if (ratings == null || ratings.isEmpty()) {
+            return 0.0;
+        }
+        double sum = 0.0;
+        for (int rating : ratings) {
+            sum += rating;
+        }
+        return sum / ratings.size();
+    }
+
+    // Method for admin to post announcements (e.g., to a server)
+    public static void postAnnouncement(String announcementText) {
+        // This method would contain the logic to post the announcement to a server
+        // or another platform that is being used for announcements.
+    }
+
+    // Method for admin to view student complaints
+    public static List<Complaint> getStudentComplaints() {
+        // This method would retrieve complaints from a local database or server.
+        // A 'Complaint' class would need to be defined elsewhere in your code.
+        return new ArrayList<>();
     }
 }

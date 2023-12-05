@@ -16,6 +16,11 @@
         android:paddingEnd="0dp"
         android:paddingRight="0dp">
 
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
 
         <include
             android:id="@+id/my_toolbar"

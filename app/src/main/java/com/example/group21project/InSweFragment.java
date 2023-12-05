@@ -1,52 +1,54 @@
 package com.example.group21project;
 
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import io.github.muddz.styleabletoast.StyleableToast;
 
-public class in_swe extends AppCompatActivity {
-    int input = 0;
-    double[] inputs = new double[6];
+public class InSweFragment extends Fragment {
 
+    private int input = 0;
+    private double[] inputs = new double[6];
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.in_swe, container, false);
 
         for (int i = 0; i <= 5; i++) {
             inputs[i] = -1;
         }
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.in_swe);
-        TextInputEditText A67text = findViewById(R.id.A67textInputEditText);
-        TextInputLayout til = findViewById(R.id.A67textInputLayout);
+        TextInputEditText A67text = view.findViewById(R.id.A67textInputEditText);
+        TextInputLayout til = view.findViewById(R.id.A67textInputLayout);
 
-        TextInputEditText A08text = findViewById(R.id.A08textInputEditText);
-        TextInputLayout til2 = findViewById(R.id.A08textInputLayout);
+        TextInputEditText A08text = view.findViewById(R.id.A08textInputEditText);
+        TextInputLayout til2 = view.findViewById(R.id.A08textInputLayout);
 
-        TextInputEditText A48text = findViewById(R.id.A48textInputEditText);
-        TextInputLayout til3 = findViewById(R.id.A48textInputLayout);
+        TextInputEditText A48text = view.findViewById(R.id.A48textInputEditText);
+        TextInputLayout til3 = view.findViewById(R.id.A48textInputLayout);
 
-        TextInputEditText A22text = findViewById(R.id.A22textInputEditText);
-        TextInputLayout til4 = findViewById(R.id.A22textInputLayout);
+        TextInputEditText A22text = view.findViewById(R.id.A22textInputEditText);
+        TextInputLayout til4 = view.findViewById(R.id.A22textInputLayout);
 
-        TextInputEditText A31text = findViewById(R.id.A31textInputEditText);
-        TextInputLayout til5 = findViewById(R.id.A31textInputLayout);
+        TextInputEditText A31text = view.findViewById(R.id.A31textInputEditText);
+        TextInputLayout til5 = view.findViewById(R.id.A31textInputLayout);
 
-        TextInputEditText A37text = findViewById(R.id.A37textInputEditText);
-        TextInputLayout til6 = findViewById(R.id.A37textInputLayout);
+        TextInputEditText A37text = view.findViewById(R.id.A37textInputEditText);
+        TextInputLayout til6 = view.findViewById(R.id.A37textInputLayout);
 
         //TextInputEditText A08text = findViewById(R.id.A08textInputEditText);
         double inputting = setupTextInputValidation(A67text, til, 0);
@@ -57,13 +59,14 @@ public class in_swe extends AppCompatActivity {
         double inputting6 = setupTextInputValidation(A37text, til6, 5);
 
 
-        Button calculateButton = findViewById(R.id.gradesButton);
+        Button calculateButton = view.findViewById(R.id.gradesButton);
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 calculateGrade(A67text, A08text, A48text, A22text, A31text, A37text);
             }
         });
+        return view;
     }
 
     public void calculateGrade(TextInputEditText A67text, TextInputEditText A08text, TextInputEditText A48text, TextInputEditText A22text, TextInputEditText A31text, TextInputEditText A37text) {
@@ -126,19 +129,19 @@ public class in_swe extends AppCompatActivity {
             }
 
             if (sum / 5.0 >= 2.5 && gpaValues[2] >= 3.0 && ((gpaValues[0] >= 1.7 && gpaValues[3] >= 1.7) || (gpaValues[0] >= 1.7 && gpaValues[5] >= 1.7) || (gpaValues[3] >= 1.7 && gpaValues[5] >= 1.7)) && pass == true) {
-                StyleableToast.makeText(in_swe.this, "You have met the requirements for this POSt!", Toast.LENGTH_LONG, R.style.passtoast).show();
+                StyleableToast.makeText(requireContext(), "You have met the requirements for this POSt!", Toast.LENGTH_LONG, R.style.passtoast).show();
             } else if (sum / 5.0 < 2.5) {
-                StyleableToast.makeText(in_swe.this, "Unfortunately, you do not qualify for this POSt. Your GPA for these courses (excluding A08) must be greater than 2.5.", Toast.LENGTH_SHORT, R.style.failtoast).show();
+                StyleableToast.makeText(requireContext(), "Unfortunately, you do not qualify for this POSt. Your GPA for these courses (excluding A08) must be greater than 2.5.", Toast.LENGTH_SHORT, R.style.failtoast).show();
             } else if (gpaValues[2] < 3.0) {
-                StyleableToast.makeText(in_swe.this, "You must have a grade of at least 73 in CSC A48", Toast.LENGTH_SHORT, R.style.failtoast).show();
+                StyleableToast.makeText(requireContext(), "You must have a grade of at least 73 in CSC A48", Toast.LENGTH_SHORT, R.style.failtoast).show();
             } else if (((gpaValues[0] < 1.7 && gpaValues[3] < 1.7) || (gpaValues[0] < 1.7 && gpaValues[5] < 1.7) || (gpaValues[3] < 1.7 && gpaValues[5] < 1.7))) {
-                StyleableToast.makeText(in_swe.this, "You must have a grade of at least 60 in two of CSC/MAT A67, MAT A22, MAT A37", Toast.LENGTH_SHORT, R.style.failtoast).show();
+                StyleableToast.makeText(requireContext(), "You must have a grade of at least 60 in two of CSC/MAT A67, MAT A22, MAT A37", Toast.LENGTH_SHORT, R.style.failtoast).show();
             } else if (pass == false) {
-                StyleableToast.makeText(in_swe.this, "You must have passed all courses required for this POSt", Toast.LENGTH_SHORT, R.style.failtoast).show();
+                StyleableToast.makeText(requireContext(), "You must have passed all courses required for this POSt", Toast.LENGTH_SHORT, R.style.failtoast).show();
             }
 
         } else {
-            StyleableToast.makeText(in_swe.this, "Please fill in all fields with valid grades", Toast.LENGTH_SHORT, R.style.failtoast).show();
+            StyleableToast.makeText(requireContext(), "Please fill in all fields with valid grades", Toast.LENGTH_SHORT, R.style.failtoast).show();
         }
 
 

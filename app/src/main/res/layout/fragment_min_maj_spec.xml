@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/AdmissionCat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you in the computer science admission category?"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/admissionCatOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/yesOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="yes" />
+
+        <RadioButton
+            android:id="@+id/noOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="no" />
+    </RadioGroup>
+    <!-- Question Text -->
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do you want to pursue a UTSC Computer Science Specialist, Major, or Minor?"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Radio Group for Options -->
+    <RadioGroup
+        android:id="@+id/programOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/specialistMajorOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Specialist/Major" />
+
+        <RadioButton
+            android:id="@+id/minorOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minor" />
+    </RadioGroup>
+
+    <!-- Next Button -->
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

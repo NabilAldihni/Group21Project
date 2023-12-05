@@ -30,7 +30,7 @@ public abstract class EventsChildFragment extends Fragment {
     protected List<EventListItem> eventListItems;
     protected EventListViewAdapter eventListAdapter;
     protected final FirebaseFirestore database;
-    private final FirebaseAuth auth;
+    protected final FirebaseAuth auth;
 
     abstract int getEventFragmentId();
     abstract int getEventListRecyclerViewId();
@@ -84,7 +84,6 @@ public abstract class EventsChildFragment extends Fragment {
     }
 
     protected void fetchEvents() {
-        // TODO: once merged with the login and user session stuff, figure out how to get only upcoming events
         eventListItems.clear();
         database.collection("Events").orderBy("startTime").get().addOnCompleteListener(
                 new OnCompleteListener<QuerySnapshot>() {
@@ -129,30 +128,22 @@ public abstract class EventsChildFragment extends Fragment {
         }
 
         submitButton.setText(buttonText);
-        updateEventRsvpList(event);
+        updateEventField(event, "attending", event.getAttending());
     }
 
-    private void updateEventRsvpList(DepartmentEvent event) {
-        database.collection("Events")
-                .whereEqualTo("capacity", event.getCapacity())
-                .whereEqualTo("location", event.getLocation())
-                .whereEqualTo("name", event.getName())
-                .whereEqualTo("startTime", event.getStartTime().toString())
-                .whereEqualTo("endTime", event.getEndTime().toString())
-                .whereEqualTo("desc", event.getDesc())
-                .limit(1)
-                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        Log.d("EventsFirebaseDebug", "Document ID found for event");
-                        if (task.isSuccessful()) {
-                            DocumentReference eventDoc = task.getResult().getDocuments().get(0).getReference();
-                            eventDoc.update("attending", event.getAttending());
-                        } else {
-                            Log.d("EventsFirebaseDebug", "Error getting Firestore documents for events: ",
-                                    task.getException());
-                        }
-                    }
-                });
+    public void updateEventField(DepartmentEvent event, String field, Object value) {
+        event.getDocumentQuery(database).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.d("EventsFirebaseDebug", "Error getting Firestore documents for events: ",
+                            task.getException());
+                    return;
+                }
+
+                DocumentReference eventDoc = task.getResult().getDocuments().get(0).getReference();
+                eventDoc.update(field, value);
+            }
+        });
     }
 }

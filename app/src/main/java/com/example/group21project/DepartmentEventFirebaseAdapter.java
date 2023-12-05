@@ -11,6 +11,7 @@ public class DepartmentEventFirebaseAdapter implements EventListItem {
     private String location;
     private int capacity;
     private ArrayList<String> attending;
+    private ArrayList<String> reviewIds;
 
     public DepartmentEventFirebaseAdapter(String name, String desc, LocalDateTime startTime, LocalDateTime endTime,
                                           String location, int capacity) {
@@ -25,6 +26,7 @@ public class DepartmentEventFirebaseAdapter implements EventListItem {
         this.location = location;
         this.capacity = capacity;
         this.attending = new ArrayList<>();
+        this.reviewIds = new ArrayList<>();
     }
 
     public DepartmentEventFirebaseAdapter() {}  // Needed for retrieval from database
@@ -33,7 +35,8 @@ public class DepartmentEventFirebaseAdapter implements EventListItem {
         LocalDateTime eventStartTime = LocalDateTime.parse(compatibleEvent.getStartTime());
         LocalDateTime eventEndTime = LocalDateTime.parse(compatibleEvent.getEndTime());
         return new DepartmentEvent(compatibleEvent.getName(), compatibleEvent.getDesc(), eventStartTime, eventEndTime,
-                compatibleEvent.getLocation(), compatibleEvent.getCapacity(), compatibleEvent.getAttending());
+                compatibleEvent.getLocation(), compatibleEvent.getCapacity(), compatibleEvent.getAttending(),
+                compatibleEvent.getReviewIds());
     }
 
     public String getName() {
@@ -62,6 +65,10 @@ public class DepartmentEventFirebaseAdapter implements EventListItem {
 
     public ArrayList<String> getAttending() {
         return attending;
+    }
+
+    public ArrayList<String> getReviewIds() {
+        return reviewIds;
     }
 
     @Override

@@ -7,13 +7,12 @@
     android:paddingTop="10dp"
     android:paddingEnd="10dp"
     android:paddingBottom="10dp"
-    android:scrollbars="vertical"
     tools:context=".EventsAttendedFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/attendedEventsView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scrollbars="vertical"
         tools:listitem="@layout/event_list_item" />
-
 </FrameLayout>

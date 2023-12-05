@@ -1,7 +1,5 @@
 package com.example.group21project;
 
-import android.app.Dialog;
-
 import java.time.LocalDateTime;
 
 public class EventsSubscribedFragment extends EventsChildFragment {

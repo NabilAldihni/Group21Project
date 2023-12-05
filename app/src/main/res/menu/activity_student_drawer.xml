@@ -8,15 +8,16 @@
             android:id="@+id/nav_announcements_list"
             android:title="@string/menu_announcements_list" />
         <item
-            android:id="@+id/nav_submit_complaints"
-            android:title="@string/menu_submit_complaints" />
-        <item
             android:id="@+id/nav_events"
             android:title="@string/menu_events" />
         <item
+
             android:id="@+id/nav_post_questionnaire"
             android:title="@string/menu_post_questionnaire" />
 
-    </group>
+        <item
+            android:id="@+id/nav_submit_complaints"
+            android:title="@string/menu_submit_complaints" />
 
+    </group>
 </menu>

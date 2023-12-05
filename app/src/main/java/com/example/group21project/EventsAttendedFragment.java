@@ -6,9 +6,10 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 
 public class EventsAttendedFragment extends EventsChildFragment {
     public EventsAttendedFragment() {}
@@ -59,17 +60,18 @@ public class EventsAttendedFragment extends EventsChildFragment {
             starsRating = (RatingBar) mDialog.findViewById(R.id.starsRatingBarEventsAttended);
             reviewTextInput = mDialog.findViewById(R.id.textReviewInputEventsAttended);
 
-            Log.d("STARS", "num of stars: " + starsRating.getRating());
-            if (0.5 <= starsRating.getNumStars() && starsRating.getNumStars() <= 5 && reviewTextInput.getText().toString().length() >= 1) {
-                Log.d("EDIT TEXT", "review " + reviewTextInput.getText().toString());
-                Map<String, Object> data = new HashMap<>();
-                data.put("eventName", event.getName());
-                data.put("location", event.getLocation());
-                data.put("numStars", starsRating.getNumStars());
-                data.put("reviewTextInput", reviewTextInput.getText().toString());
-                data.put("startTime", event.getStartTimeString());
-
-                database.collection("Reviews").add(data);
+            if (!AddEventsInputValidator.stringIsBlank(reviewTextInput.getText().toString())) {
+                String reviewerEmail = auth.getCurrentUser().getEmail();
+                DepartmentEventReview review = new DepartmentEventReview(reviewerEmail, starsRating.getRating(),
+                        reviewTextInput.getText().toString(), LocalDateTime.now().toString());
+                database.collection("Reviews").add(review).addOnSuccessListener(
+                        new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                event.addReview(documentReference.getId());
+                                updateEventField(event, "reviewIds", event.getReviewIds());
+                            }
+                        });
 
                 Toast reviewConfirmation = Toast.makeText(getContext(), "Review submitted", Toast.LENGTH_SHORT);
                 reviewConfirmation.show();

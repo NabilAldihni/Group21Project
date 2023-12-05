@@ -48,11 +48,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:gravity="center"
         android:layout_marginLeft="22dp"
         android:layout_marginTop="40dp"
-        android:rating="2.5"
-        android:layout_marginRight="22dp"/>
+        android:layout_marginRight="22dp"
+        android:gravity="center"
+        android:numStars="5"
+        android:rating="2.5" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"

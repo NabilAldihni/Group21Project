@@ -6,4 +6,6 @@ public interface LoginView {
     void navigateToAdmin();
     void navigateToStudent();
     void showAuthenticationFailed(String text);
+    String getEmail();
+    String getPassword();
 }

@@ -13,15 +13,20 @@ import com.google.firebase.firestore.DocumentSnapshot;
 public class LoginPresenter {
     private LoginView view;
     private LoginModel model;
+    private final String EMAIL_PASSWORD_NOT_ENTERED_TEXT = "Please enter email and password";
+    private final String AUTH_FAILED_TEXT = "Authentication failed.";
+
 
     public LoginPresenter(LoginView view, LoginModel model) {
         this.view = view;
         this.model = model;
     }
 
-    public void onLoginClicked(String email, String password){
+    public void onLoginClicked() {
+        String email = view.getEmail();
+        String password = view.getPassword();
         if(email.isEmpty() || password.isEmpty()) {
-            view.showAuthenticationFailed("Please enter email and password");
+            view.showAuthenticationFailed(EMAIL_PASSWORD_NOT_ENTERED_TEXT);
             return;
         }
 
@@ -34,7 +39,7 @@ public class LoginPresenter {
                     model.checkUserType(user, this::handleUserType);
                 }
             }else {
-                view.showAuthenticationFailed("Authentication failed.");
+                view.showAuthenticationFailed(AUTH_FAILED_TEXT);
             }
         });
 
@@ -60,5 +65,13 @@ public class LoginPresenter {
             view.showProgress();
             model.checkUserType(currentUser, this::handleUserType);
         }
+    }
+
+    public String getEmailPasswordNotEnteredText() {
+        return EMAIL_PASSWORD_NOT_ENTERED_TEXT;
+    }
+
+    public String getAuthFailedText() {
+        return AUTH_FAILED_TEXT;
     }
 }
